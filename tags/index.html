@@ -121,8 +121,8 @@
       applicationID: '',
       apiKey: '',
       indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+      hits: "",
+      labels: ""
     }
   };
 </script>
@@ -221,45 +221,9 @@
       
 
       
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-            搜索
-          </a>
-        </li>
-      
     </ul>
   
 
-  
-    <div class="site-search">
-      
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-  </div>
-
-
-
-
-    </div>
   
 </nav>
 
@@ -287,10 +251,10 @@
     
       <div class="tag-cloud">
         <div class="tag-cloud-title">
-            目前共计 20 个标签
+            目前共计 19 个标签
         </div>
         <div class="tag-cloud-tags">
-          <a href="/tags/brew/" style="font-size: 12px; color: #ccc">brew</a> <a href="/tags/cli/" style="font-size: 12px; color: #ccc">cli</a> <a href="/tags/css/" style="font-size: 26.4px; color: #363636">css</a> <a href="/tags/git/" style="font-size: 12px; color: #ccc">git</a> <a href="/tags/hexo/" style="font-size: 12px; color: #ccc">hexo</a> <a href="/tags/html/" style="font-size: 22.8px; color: #5c5c5c">html</a> <a href="/tags/ios/" style="font-size: 12px; color: #ccc">ios</a> <a href="/tags/js/" style="font-size: 30px; color: #111">js</a> <a href="/tags/linux/" style="font-size: 12px; color: #ccc">linux</a> <a href="/tags/markdown/" style="font-size: 15.6px; color: #a7a7a7">markdown</a> <a href="/tags/meta/" style="font-size: 15.6px; color: #a7a7a7">meta</a> <a href="/tags/mysql/" style="font-size: 12px; color: #ccc">mysql</a> <a href="/tags/nodejs/" style="font-size: 12px; color: #ccc">nodejs</a> <a href="/tags/php/" style="font-size: 15.6px; color: #a7a7a7">php</a> <a href="/tags/retina/" style="font-size: 15.6px; color: #a7a7a7">retina</a> <a href="/tags/sass/" style="font-size: 19.2px; color: #818181">sass</a> <a href="/tags/sublime/" style="font-size: 12px; color: #ccc">sublime</a> <a href="/tags/terminal/" style="font-size: 12px; color: #ccc">terminal</a> <a href="/tags/vagrant/" style="font-size: 12px; color: #ccc">vagrant</a> <a href="/tags/zepto/" style="font-size: 12px; color: #ccc">zepto</a>
+          <a href="/tags/brew/" style="font-size: 12px; color: #ccc">brew</a> <a href="/tags/cli/" style="font-size: 12px; color: #ccc">cli</a> <a href="/tags/css/" style="font-size: 26.4px; color: #363636">css</a> <a href="/tags/git/" style="font-size: 12px; color: #ccc">git</a> <a href="/tags/hexo/" style="font-size: 12px; color: #ccc">hexo</a> <a href="/tags/html/" style="font-size: 22.8px; color: #5c5c5c">html</a> <a href="/tags/ios/" style="font-size: 12px; color: #ccc">ios</a> <a href="/tags/js/" style="font-size: 30px; color: #111">js</a> <a href="/tags/linux/" style="font-size: 12px; color: #ccc">linux</a> <a href="/tags/markdown/" style="font-size: 15.6px; color: #a7a7a7">markdown</a> <a href="/tags/meta/" style="font-size: 15.6px; color: #a7a7a7">meta</a> <a href="/tags/mysql/" style="font-size: 12px; color: #ccc">mysql</a> <a href="/tags/nodejs/" style="font-size: 12px; color: #ccc">nodejs</a> <a href="/tags/php/" style="font-size: 15.6px; color: #a7a7a7">php</a> <a href="/tags/retina/" style="font-size: 15.6px; color: #a7a7a7">retina</a> <a href="/tags/sass/" style="font-size: 19.2px; color: #818181">sass</a> <a href="/tags/terminal/" style="font-size: 12px; color: #ccc">terminal</a> <a href="/tags/vagrant/" style="font-size: 12px; color: #ccc">vagrant</a> <a href="/tags/zepto/" style="font-size: 12px; color: #ccc">zepto</a>
         </div>
       </div>
     
@@ -338,7 +302,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">57</span>
+                <span class="site-state-item-count">56</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -351,7 +315,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -531,19 +495,6 @@
   
 
 
-
-
-  
-  
-  
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/js/src/algolia-search.js?v=5.1.1"></script>
 
 
 

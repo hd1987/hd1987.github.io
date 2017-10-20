@@ -120,8 +120,8 @@
       applicationID: '',
       apiKey: '',
       indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+      hits: "",
+      labels: ""
     }
   };
 </script>
@@ -222,45 +222,9 @@
       
 
       
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-            搜索
-          </a>
-        </li>
-      
     </ul>
   
 
-  
-    <div class="site-search">
-      
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-  </div>
-
-
-
-
-    </div>
   
 </nav>
 
@@ -526,209 +490,6 @@
 <tr>
 <td>cd /var/www/astellas/ &amp;&amp; composer update</td>
 <td>模块升级</td>
-</tr>
-</tbody>
-</table>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="/2017/08/10/sublime-text/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Adi">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Adi & FE">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/10/sublime-text/" itemprop="url">Sublime text3 plug-in and settings</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-10T13:14:34+08:00">
-                2017-08-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>让sublime插件jshint识别ES6，只需要在头部加上<code>/* jshint esversion:6 */</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">/* jshint esversion:6 */</div><div class="line">let funABC = () =&gt; &#123;</div><div class="line">  console.log(111);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;color_scheme&quot;: &quot;Packages/User/SublimeLinter/Monokai (SL).tmTheme&quot;,</div><div class="line">  &quot;highlight_line&quot;: true,</div><div class="line">  &quot;highlight_modified_tabs&quot;: true,</div><div class="line">  &quot;ignored_packages&quot;:</div><div class="line">  [</div><div class="line">    &quot;Vintage&quot;</div><div class="line">  ],</div><div class="line">  &quot;rulers&quot;:</div><div class="line">  [</div><div class="line">    80</div><div class="line">  ],</div><div class="line">  &quot;save_on_focus_lost&quot;: true,</div><div class="line">  &quot;scroll_past_end&quot;: true,</div><div class="line">  &quot;show_encoding&quot;: true,</div><div class="line">  &quot;tab_size&quot;: 2,</div><div class="line">  &quot;translate_tabs_to_spaces&quot;: true,</div><div class="line">  &quot;trim_trailing_white_space_on_save&quot;: true,</div><div class="line">  &quot;word_wrap&quot;: false</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th>name</th>
-<th>describe</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Alignment</td>
-<td>对齐(默认super+ctrl+a，修改super+shift+a)</td>
-</tr>
-<tr>
-<td>AutoFileName</td>
-<td>下拉提示文件图片路径</td>
-</tr>
-<tr>
-<td>BracketHighLighter</td>
-<td>代码高亮提示</td>
-</tr>
-<tr>
-<td>CSS Format</td>
-<td>css格式化</td>
-</tr>
-<tr>
-<td>DocBlockr</td>
-<td>注释美化</td>
-</tr>
-<tr>
-<td>Emmet</td>
-<td>html快速生成</td>
-</tr>
-<tr>
-<td>EncodingHelper</td>
-<td>设置当前文件的编码类型</td>
-</tr>
-<tr>
-<td>jQuery</td>
-<td>jQuery提示</td>
-</tr>
-<tr>
-<td>JsFormat</td>
-<td>js格式化</td>
-</tr>
-<tr>
-<td>Nodejs</td>
-<td>Nodejs提示</td>
-</tr>
-<tr>
-<td>Package Control</td>
-<td>插件安装工具</td>
-</tr>
-<tr>
-<td>PyV8</td>
-<td>配合Emmet使用</td>
-</tr>
-<tr>
-<td>Sass</td>
-<td>css代码高亮</td>
-</tr>
-<tr>
-<td>SCSS</td>
-<td>css代码提示</td>
-</tr>
-<tr>
-<td>SideBarEnhancements</td>
-<td>侧边栏增强</td>
-</tr>
-<tr>
-<td>sublimeCodeIntel</td>
-<td>js代码提示</td>
-</tr>
-<tr>
-<td>SublimeLinter</td>
-<td>代码错误提示</td>
-</tr>
-<tr>
-<td>SublimeLinter-jshint</td>
-<td>js错误提示（node jshint）</td>
-</tr>
-<tr>
-<td>Terminal</td>
-<td>当前目录下的终端工具</td>
-</tr>
-<tr>
-<td>TrailingSpaces</td>
-<td>高亮显示多余的空格和Tab</td>
 </tr>
 </tbody>
 </table>
@@ -1580,6 +1341,121 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="/2016/10/31/js-window-width-height/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Adi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Adi & FE">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/10/31/js-window-width-height/" itemprop="url">Javascript、Jquery获取浏览器和屏幕各种高度宽度</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-31T13:44:11+08:00">
+                2016-10-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Javascript:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">document</span>.body.clientWidth        <span class="comment">//网页可见区域宽(body)</span></div><div class="line"><span class="built_in">document</span>.body.clientHeight       <span class="comment">//网页可见区域高(body)</span></div><div class="line"><span class="built_in">document</span>.body.offsetWidth        <span class="comment">//网页可见区域宽(body)，包括border、margin等</span></div><div class="line"><span class="built_in">document</span>.body.offsetHeight       <span class="comment">//网页可见区域宽(body)，包括border、margin等</span></div><div class="line"><span class="built_in">document</span>.body.scrollWidth        <span class="comment">//网页正文全文宽，包括有滚动条时的未见区域</span></div><div class="line"><span class="built_in">document</span>.body.scrollHeight       <span class="comment">//网页正文全文高，包括有滚动条时的未见区域</span></div><div class="line"><span class="built_in">document</span>.body.scrollTop          <span class="comment">//网页被卷去的Top(滚动条)</span></div><div class="line"><span class="built_in">document</span>.body.scrollLeft         <span class="comment">//网页被卷去的Left(滚动条)</span></div><div class="line"><span class="built_in">window</span>.screenTop                 <span class="comment">//浏览器距离Top</span></div><div class="line"><span class="built_in">window</span>.screenLeft                <span class="comment">//浏览器距离Left</span></div><div class="line"><span class="built_in">window</span>.screen.height             <span class="comment">//屏幕分辨率的高</span></div><div class="line"><span class="built_in">window</span>.screen.width              <span class="comment">//屏幕分辨率的宽</span></div><div class="line"><span class="built_in">window</span>.screen.availHeight        <span class="comment">//屏幕可用工作区的高</span></div><div class="line"><span class="built_in">window</span>.screen.availWidth         <span class="comment">//屏幕可用工作区的宽</span></div></pre></td></tr></table></figure>
+<p>Jquery:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$(<span class="built_in">window</span>).height()                 <span class="comment">//浏览器当前窗口可视区域高度</span></div><div class="line">$(<span class="built_in">document</span>).height()               <span class="comment">//浏览器当前窗口文档的高度</span></div><div class="line">$(<span class="built_in">document</span>.body).height()          <span class="comment">//浏览器当前窗口文档body的高度</span></div><div class="line">$(<span class="built_in">document</span>.body).outerHeight(<span class="literal">true</span>) <span class="comment">//浏览器当前窗口文档body的总高度 包括border padding margin</span></div><div class="line">$(<span class="built_in">window</span>).width()                  <span class="comment">//浏览器当前窗口可视区域宽度</span></div><div class="line">$(<span class="built_in">document</span>).width()                <span class="comment">//浏览器当前窗口文档对象宽度</span></div><div class="line">$(<span class="built_in">document</span>.body).width()           <span class="comment">//浏览器当前窗口文档body的宽度</span></div><div class="line">$(<span class="built_in">document</span>.body).outerWidth(<span class="literal">true</span>)  <span class="comment">//浏览器当前窗口文档body的总宽度 包括border padding margin</span></div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
@@ -1630,7 +1506,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">57</span>
+                <span class="site-state-item-count">56</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1643,7 +1519,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1823,19 +1699,6 @@
   
 
 
-
-
-  
-  
-  
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/js/src/algolia-search.js?v=5.1.1"></script>
 
 
 
