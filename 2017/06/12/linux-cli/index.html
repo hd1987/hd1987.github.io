@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next mist" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="linux,cli," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="文件目录操作命令ls列出目标目录中所有的子目录和文件。  -R 遍历 -r 反向排序 -S 按照文件大小排序 -s 显示文件大小 -a 显示隐藏文件 -t 文件修改时间排序 -l 显示详细信息  1ls -l t*        //列出所有以t开头的文件">
+<meta name="keywords" content="linux,cli">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux常用命令">
+<meta property="og:url" content="/2017/06/12/linux-cli/index.html">
+<meta property="og:site_name" content="Adi &amp; FE">
+<meta property="og:description" content="文件目录操作命令ls列出目标目录中所有的子目录和文件。  -R 遍历 -r 反向排序 -S 按照文件大小排序 -s 显示文件大小 -a 显示隐藏文件 -t 文件修改时间排序 -l 显示详细信息  1ls -l t*        //列出所有以t开头的文件">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-06-20T08:59:22.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="linux常用命令">
+<meta name="twitter:description" content="文件目录操作命令ls列出目标目录中所有的子目录和文件。  -R 遍历 -r 反向排序 -S 按照文件大小排序 -s 显示文件大小 -a 显示隐藏文件 -t 文件修改时间排序 -l 显示详细信息  1ls -l t*        //列出所有以t开头的文件">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="/2017/06/12/linux-cli/"/>
+
+
+
+
+
+  <title>linux常用命令 | Adi & FE</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Adi & FE</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="/2017/06/12/linux-cli/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Adi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Adi & FE">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">linux常用命令</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-12T11:05:55+08:00">
+                2017-06-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="文件目录操作命令"><a href="#文件目录操作命令" class="headerlink" title="文件目录操作命令"></a>文件目录操作命令</h1><h2 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h2><p>列出目标目录中所有的子目录和文件。</p>
+<ul>
+<li><code>-R</code> 遍历</li>
+<li><code>-r</code> 反向排序</li>
+<li><code>-S</code> 按照文件大小排序</li>
+<li><code>-s</code> 显示文件大小</li>
+<li><code>-a</code> 显示隐藏文件</li>
+<li><code>-t</code> 文件修改时间排序</li>
+<li><code>-l</code> 显示详细信息</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls -l t*        //列出所有以t开头的文件</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h2><p>切换当前目录至dirName<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> /        //进入系统根目录</div><div class="line"><span class="built_in">cd</span> ..       //进入上一级目录</div><div class="line"><span class="built_in">cd</span>          //进入当前用户主目录</div><div class="line"><span class="built_in">cd</span> -        //返回进入此目录之前所在的目录</div></pre></td></tr></table></figure></p>
+<h2 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h2><p>查看”当前工作目录“的完整路径</p>
+<h2 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h2><p>通过 mkdir 命令可以实现在指定位置创建以 DirName(指定的文件名)命名的文件夹或目录。要创建文件夹或目录的用户必须对所创建的文件夹的父文件夹具有写权限。并且，所创建的文件夹(目录)不能与其父目录(即父文件夹)中的文件名重名，即同一个目录下不能有同名的(区分大小写)。</p>
+<ul>
+<li><code>-v</code> –verbose  每次创建新目录都显示信息</li>
+</ul>
+<h2 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h2><p>删除一个目录中的一个或多个文件或目录，如果没有使用- r选项，则rm不会删除目录。如果使用 rm 来删除文件，通常仍可以将该文件恢复原状。</p>
+<ul>
+<li><code>-f</code> –force 忽略不存在的文件，从不给出提示。</li>
+<li><code>-i</code> –interactive 进行交互式删除</li>
+<li><code>-r, -R</code> –recursive 指示rm将参数中列出的全部目录和子目录均递归地删除。</li>
+<li><code>-v</code> –verbose 详细显示进行的步骤</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rm -r <span class="built_in">test</span>        //遍历删除文件夹及内部文件</div></pre></td></tr></table></figure>
+<h2 id="rmdir"><a href="#rmdir" class="headerlink" title="rmdir"></a>rmdir</h2><p>该命令从一个目录中删除一个或多个子目录项，删除某目录时也必须具有对父目录的写权限。</p>
+<ul>
+<li><code>-v</code> –verbose  显示指令执行过程</li>
+<li><code>-p</code> 递归删除目录dirname，当子目录删除后其父目录为空时，也一同被删除</li>
+</ul>
+<h2 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h2><p>视mv命令中第二个参数类型的不同（是目标文件还是目标目录），mv命令将文件重命名或将其移至一个新的目录中。当第二个参数类型是文件时，mv命令完成文件重命名，此时，源文件只能有一个（也可以是源目录名），它将所给的源文件或目录重命名为给定的目标文件名。当第二个参数是已存在的目录名称时，源文件或目录参数可以有多个，mv命令将各参数指定的源文件均移至目标目录中。在跨文件系统移动文件时，mv先拷贝，再将原有文件删除，而链至该文件的链接也将丢失。</p>
+<ul>
+<li><code>-b</code> 若需覆盖文件，则覆盖前先行备份。</li>
+<li><code>-f</code> force 强制的意思，如果目标文件已经存在，不会询问而直接覆盖；</li>
+<li><code>-i</code> 若目标文件 (destination) 已经存在时，就会询问是否覆盖！</li>
+<li><code>-u</code> 若目标文件已经存在，且 source 比较新，才会更新(update)</li>
+<li><code>-t</code> –target-directory=DIRECTORY move all SOURCE arguments into DIRECTORY，即指定mv的目标目录，该选项适用于移动多个源文件到一个目录的情况，此时目标目录在前，源文件在后。</li>
+</ul>
+<h2 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h2><p>将源文件复制至目标文件，或将多个源文件复制至目标目录。</p>
+<ul>
+<li><code>-a</code> –archive 为每个已存在的目标文件创建备份</li>
+<li><code>-b</code> 类似–backup 但不接受参数</li>
+<li><code>-d</code> 等于–no-dereference –preserve=links</li>
+<li><code>-f</code> –force 如果目标文件无法打开则将其移除并重试(当 -n 选项存在时则不需再选此项)</li>
+<li><code>-i</code> –interactive 覆盖前询问(使前面的 -n 选项失效)</li>
+<li><code>-H</code> 跟随源文件中的命令行符号链接</li>
+<li><code>-l</code> –link 链接文件而不复制</li>
+<li><code>-L</code> –dereference 总是跟随符号链接</li>
+<li><code>-n</code> –no-clobber 不要覆盖已存在的文件(使前面的 -i 选项失效)</li>
+<li><code>-P</code> –no-dereference 不跟随源文件中的符号链接</li>
+<li><code>-p</code> 等于–preserve=模式,所有权,时间戳</li>
+<li><code>-R, -r</code> –recursive 复制目录及目录内的所有项目</li>
+</ul>
+<h2 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h2><p>touch命令参数可更改文档或目录的日期时间，包括存取时间和更改时间。</p>
+<ul>
+<li><code>-a</code> 或–time=atime或–time=access或–time=use 只更改存取时间。</li>
+<li><code>-c</code> 或–no-create 不建立任何文档。</li>
+<li><code>-d</code> 使用指定的日期时间，而非现在的时间。</li>
+<li><code>-f</code> 此参数将忽略不予处理，仅负责解决BSD版本touch指令的兼容性问题。</li>
+<li><code>-m</code> 或–time=mtime或–time=modify 只更改变动时间。</li>
+<li><code>-r</code> 把指定文档或目录的日期时间，统统设成和参考文档或目录的日期时间相同。</li>
+<li><code>-t</code> 使用指定的日期时间，而非现在的时间。</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">touch log2012.log log2013.log       //创建不存在的文件</div><div class="line">touch -c log2014.log                //如果log2014.log不存在，则不创建文件</div><div class="line">touch -r log.log log2012.log        //更新log.log的时间和log2012.log时间戳相同</div><div class="line">touch -t 201211142234.50 log.log    //设定文件的时间戳</div></pre></td></tr></table></figure>
+<h2 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h2><ol>
+<li>一次显示整个文件:cat filename</li>
+<li>从键盘创建一个文件:cat &gt; filename 只能创建新文件,不能编辑已有文件.</li>
+<li>将几个文件合并为一个文件:cat file1 file2 &gt; file</li>
+</ol>
+<ul>
+<li><code>-A</code> –show-all 等价于 -vET</li>
+<li><code>-b</code> –number-nonblank 对非空输出行编号</li>
+<li><code>-e</code> 等价于 -vE</li>
+<li><code>-E</code> –show-ends 在每行结束处显示 $</li>
+<li><code>-n</code> –number 对输出的所有行编号,由1开始对所有输出的行数编号</li>
+<li><code>-s</code> –squeeze-blank 有连续两行以上的空白行，就代换为一行的空白行 </li>
+<li><code>-t</code> 与 -vT 等价</li>
+<li><code>-T</code> –show-tabs 将跳格字符显示为 ^I</li>
+<li><code>-u</code> (被忽略)</li>
+<li><code>-v</code> –show-nonprinting 使用 ^ 和 M- 引用，除了 LFD 和 TAB 之外</li>
+</ul>
+<h2 id="nl"><a href="#nl" class="headerlink" title="nl"></a>nl</h2><p>nl 命令读取 File 参数（缺省情况下标准输入），计算输入中的行号，将计算过的行号写入标准输出。 在输出中，nl 命令根据您在命令行中指定的标志来计算左边的行。 输入文本必须写在逻辑页中。每个逻辑页有头、主体和页脚节（可以有空节）。 除非使用 -p 标志，nl 命令在每个逻辑页开始的地方重新设置行号。 可以单独为头、主体和页脚节设置行计算标志（例如，头和页脚行可以被计算然而文本行不能）。</p>
+<ul>
+<li><code>-b</code> 指定行号指定的方式，主要有两种：<ul>
+<li><code>-b a</code> 表示不论是否为空行，也同样列出行号(类似 cat -n)；</li>
+<li><code>-b t</code> 如果有空行，空的那一行不要列出行号(默认值)；</li>
+</ul>
+</li>
+<li><code>-n</code> 列出行号表示的方法，主要有三种：<ul>
+<li><code>-n ln</code> 行号在萤幕的最左方显示；</li>
+<li><code>-n rn</code> 行号在自己栏位的最右方显示，且不加 0 (默认值)；</li>
+<li><code>-n rz</code> 行号在自己栏位的最右方显示，且加 0；</li>
+</ul>
+</li>
+<li><code>-w</code> 行号栏位的占用的位数。</li>
+<li><code>-p</code> 在逻辑定界符处不重新开始计算。</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">nl -b a -n rz log2014.log       //让行号前面自动补上0,统一输出格式</div></pre></td></tr></table></figure>
+<h2 id="more"><a href="#more" class="headerlink" title="more"></a>more</h2><h2 id="less"><a href="#less" class="headerlink" title="less"></a>less</h2><p>less 与 more 类似， less 在查看之前不会加载整个文件。</p>
+<ul>
+<li><code>-b</code> &lt;缓冲区大小&gt; 设置缓冲区的大小</li>
+<li><code>-e</code> 当文件显示结束后，自动离开</li>
+<li><code>-f</code> 强迫打开特殊文件，例如外围设备代号、目录和二进制文件</li>
+<li><code>-g</code> 只标志最后搜索的关键词</li>
+<li><code>-i</code> 忽略搜索时的大小写</li>
+<li><code>-m</code> 显示类似more命令的百分比</li>
+<li><code>-N</code> 显示每行的行号</li>
+<li><code>-o</code> &lt;文件名&gt; 将less 输出的内容在指定文件中保存起来</li>
+<li><code>-Q</code> 不使用警告音</li>
+<li><code>-s</code> 显示连续空行为一行</li>
+<li><code>-S</code> 行过长时间将超出部分舍弃</li>
+<li><code>-x</code> &lt;数字&gt; 将“tab”键显示为规定的数字空格</li>
+<li><code>/xxx</code> 向下搜索“xxx”的功能</li>
+<li><code>?xxx</code> 向上搜索“xxx”的功能</li>
+<li>n：重复前一个搜索（与 / 或 ? 有关）</li>
+<li>N：反向重复前一个搜索（与 / 或 ? 有关）</li>
+<li>b  向后翻一页</li>
+<li>d  向后翻半页</li>
+<li>h  显示帮助界面</li>
+<li>Q  退出less 命令</li>
+<li>u  向前滚动半页</li>
+<li>y  向前滚动一行</li>
+<li>空格键 滚动一页</li>
+<li>回车键 滚动一行</li>
+<li>[pagedown]： 向下翻动一行</li>
+<li>[pageup]：   向上翻动一行</li>
+</ul>
+<h2 id="head"><a href="#head" class="headerlink" title="head"></a>head</h2><p>head 用来显示档案的开头至标准输出中，默认head命令打印其相应文件的开头10行。</p>
+<ul>
+<li><code>-q</code> 隐藏文件名</li>
+<li><code>-v</code> 显示文件名</li>
+<li><code>-c&lt;字节&gt;</code> 显示字节数</li>
+<li><code>-n&lt;行数&gt;</code> 显示的行数</li>
+</ul>
+<h2 id="tail"><a href="#tail" class="headerlink" title="tail"></a>tail</h2><p>用于显示指定文件末尾内容，不指定文件时，作为输入信息进行处理。常用查看日志文件。</p>
+<ul>
+<li><code>-f</code> 循环读取</li>
+<li><code>-q</code> 不显示处理信息</li>
+<li><code>-v</code> 显示详细的处理信息</li>
+<li><code>-c&lt;数目&gt;</code> 显示的字节数</li>
+<li><code>-n&lt;行数&gt;</code> 显示行数</li>
+<li><code>--pid=PID</code> 与-f合用,表示在进程ID,PID死掉之后结束. </li>
+<li><code>-q, --quiet, --silent</code> 从不输出给出文件名的首部 </li>
+<li><code>-s, --sleep-interval=S</code> 与-f合用,表示在每次反复的间隔休眠S秒</li>
+</ul>
+<h1 id="文件查找命令"><a href="#文件查找命令" class="headerlink" title="文件查找命令"></a>文件查找命令</h1><h2 id="which"><a href="#which" class="headerlink" title="which"></a>which</h2><p>which指令会在PATH变量指定的路径中，搜索某个系统命令的位置，并且返回第一个搜索结果。</p>
+<ul>
+<li><code>-n</code>　指定文件名长度，指定的长度必须大于或等于所有文件中最长的文件名。</li>
+<li><code>-p</code>　与-n参数相同，但此处的包括了文件的路径。</li>
+<li><code>-w</code>　指定输出时栏位的宽度。</li>
+<li><code>-V</code>　显示版本信息</li>
+</ul>
+<h2 id="whereis"><a href="#whereis" class="headerlink" title="whereis"></a>whereis</h2><p>whereis命令是定位可执行文件、源代码文件、帮助文件在文件系统中的位置。这些文件的属性应属于原始代码，二进制文件，或是帮助文件。whereis 程序还具有搜索源代码、指定备用搜索路径和搜索不寻常项的能力。</p>
+<ul>
+<li><code>-b</code> 定位可执行文件。</li>
+<li><code>-m</code> 定位帮助文件。</li>
+<li><code>-s</code> 定位源代码文件。</li>
+<li><code>-u</code> 搜索默认路径下除可执行文件、源代码文件、帮助文件以外的其它文件。</li>
+<li><code>-B</code> 指定搜索可执行文件的路径。</li>
+<li><code>-M</code> 指定搜索帮助文件的路径。</li>
+<li><code>-S</code> 指定搜索源代码文件的路径。</li>
+</ul>
+<h2 id="locate"><a href="#locate" class="headerlink" title="locate"></a>locate</h2><p>locate命令可以在搜寻数据库时快速找到档案，数据库由updatedb程序来更新，updatedb是由cron daemon周期性建立的，locate命令在搜寻数据库时比由整个由硬盘资料来搜寻资料来得快，但较差劲的是locate所找到的档案若是最近才建立或 刚更名的，可能会找不到，在内定值中，updatedb每天会跑一次，可以由修改crontab来更新设定值。(etc/crontab)<br>locate指定用在搜寻符合条件的档案，它会去储存档案与目录名称的数据库内，寻找合乎范本样式条件的档案或目录录，可以使用特殊字元（如”<em>” 或”?”等）来指定范本样式，如指定范本为kcpa</em>ner, locate会找出所有起始字串为kcpa且结尾为ner的档案或目录，如名称为kcpartner若目录录名称为kcpa_ner则会列出该目录下包括 子目录在内的所有档案。<br>locate指令和find找寻档案的功能类似，但locate是透过update程序将硬盘中的所有档案和目录资料先建立一个索引数据库，在 执行loacte时直接找该索引，查询速度会较快，索引数据库一般是由操作系统管理，但也可以直接下达update强迫系统立即修改索引数据库。</p>
+<ul>
+<li><code>-e</code> 将排除在寻找的范围之外。</li>
+<li><code>-1</code> 如果 是 1．则启动安全模式。在安全模式下，使用者不会看到权限无法看到    的档案。这会始速度减慢，因为 locate 必须至实际的档案系统中取得档案的    权限资料。</li>
+<li><code>-f</code> 将特定的档案系统排除在外，例如我们没有到理要把 proc 档案系统中的档案    放在资料库中。</li>
+<li><code>-q</code> 安静模式，不会显示任何错误讯息。</li>
+<li><code>-n</code> 至多显示 n个输出。</li>
+<li><code>-r</code> 使用正规运算式 做寻找的条件。</li>
+<li><code>-o</code> 指定资料库存的名称。</li>
+<li><code>-d</code> 指定资料库的路径</li>
+<li><code>-h</code> 显示辅助讯息</li>
+<li><code>-V</code> 显示程式的版本讯息</li>
+</ul>
+<h2 id="find"><a href="#find" class="headerlink" title="find"></a>find</h2><p>用于在文件树种查找文件，并作出相应的处理</p>
+<p><code>find pathname -options [-print -exec -ok ...]</code></p>
+<ul>
+<li>pathname: find命令所查找的目录路径。例如用.来表示当前目录，用/来表示系统根目录。 </li>
+<li>-print： find命令将匹配的文件输出到标准输出。 </li>
+<li>-exec： find命令对匹配的文件执行该参数所给出的shell命令。相应命令的形式为’command’ {  } \;，注意{   }和\；之间的空格。 </li>
+<li><p>-ok： 和-exec的作用相同，只不过以一种更为安全的模式来执行该参数所给出的shell命令，在执行每一个命令之前，都会给出提示，让用户来确定是否执行。</p>
+</li>
+<li><p><code>-name</code> 按照文件名查找文件。</p>
+</li>
+<li><code>-perm</code> 按照文件权限来查找文件。</li>
+<li><code>-prune</code> 使用这一选项可以使find命令不在当前指定的目录中查找，如果同时使用-depth选项，那么-prune将被find命令忽略。</li>
+<li><code>-user</code> 按照文件属主来查找文件。</li>
+<li><code>-group</code> 按照文件所属的组来查找文件。</li>
+<li><code>-mtime -n +n</code> 按照文件的更改时间来查找文件， - n表示文件更改时间距现在n天以内，+ n表示文件更改时间距现在n天以前。find命令还有-atime和-ctime 选项，但它们都和-m time选项。</li>
+<li><code>-nogroup</code> 查找无有效所属组的文件，即该文件所属的组在/etc/groups中不存在。</li>
+<li><code>-nouser</code> 查找无有效属主的文件，即该文件的属主在/etc/passwd中不存在。</li>
+<li><code>-newer file1 ! file2</code> 查找更改时间比文件file1新但比文件file2旧的文件。</li>
+<li><code>-type</code> 查找某一类型的文件，诸如：<ul>
+<li><code>b</code> - 块设备文件。</li>
+<li><code>d</code> - 目录。</li>
+<li><code>c</code> - 字符设备文件。</li>
+<li><code>p</code> - 管道文件。</li>
+<li><code>l</code> - 符号链接文件。</li>
+<li><code>f</code> - 普通文件。</li>
+</ul>
+</li>
+<li><code>-size n</code> [c] 查找文件长度为n块的文件，带有c时表示文件长度以字节计。-depth：在查找文件时，首先查找当前目录中的文件，然后再在其子目录中查找。</li>
+<li><code>-fstype</code> 查找位于某一类型文件系统中的文件，这些文件系统类型通常可以在配置文件/etc/fstab中找到，该配置文件中包含了本系统中有关文件系统的信息。</li>
+<li><code>-mount</code> 在查找文件时不跨越文件系统mount点。</li>
+<li><code>-follow</code> 如果find命令遇到符号链接文件，就跟踪至链接所指向的文件。</li>
+<li><code>-cpio</code> 对匹配的文件使用cpio命令，将这些文件备份到磁带设备中。<br>另外,下面三个的区别:</li>
+<li><code>-amin n</code> 查找系统中最后N分钟访问的文件</li>
+<li><code>-atime n</code> 查找系统中最后n*24小时访问的文件</li>
+<li><code>-cmin n</code> 查找系统中最后N分钟被改变文件状态的文件</li>
+<li><code>-ctime n</code> 查找系统中最后n*24小时被改变文件状态的文件</li>
+<li><code>-mmin n</code> 查找系统中最后N分钟被改变文件数据的文件</li>
+<li><code>-mtime n</code> 查找系统中最后n*24小时被改变文件数据的文件</li>
+</ul>
+<h1 id="文件和目录属性"><a href="#文件和目录属性" class="headerlink" title="文件和目录属性"></a>文件和目录属性</h1><ul>
+<li><code>/</code> 根目录</li>
+<li><code>. ./</code> 当前目录</li>
+<li><code>.. ../</code> 上级目录</li>
+</ul>
+<h1 id="文件打包上传和下载"><a href="#文件打包上传和下载" class="headerlink" title="文件打包上传和下载"></a>文件打包上传和下载</h1><h2 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h2><p>用来压缩和解压文件。tar本身不具有压缩功能。他是调用压缩功能实现的</p>
+<p>必要参数有如下：</p>
+<ul>
+<li><code>-A</code> 新增压缩文件到已存在的压缩</li>
+<li><code>-B</code> 设置区块大小</li>
+<li><code>-c</code> 建立新的压缩文件</li>
+<li><code>-d</code> 记录文件的差别</li>
+<li><code>-r</code> 添加文件到已经压缩的文件</li>
+<li><code>-u</code> 添加改变了和现有的文件到已经存在的压缩文件</li>
+<li><code>-x</code> 从压缩的文件中提取文件</li>
+<li><code>-t</code> 显示压缩文件的内容</li>
+<li><code>-z</code> 支持gzip解压文件</li>
+<li><code>-j</code> 支持bzip2解压文件</li>
+<li><code>-Z</code> 支持compress解压文件</li>
+<li><code>-v</code> 显示操作过程</li>
+<li><code>-l</code> 文件系统边界设置</li>
+<li><code>-k</code> 保留原有文件不覆盖</li>
+<li><code>-m</code> 保留文件不被覆盖</li>
+<li><code>-W</code> 确认压缩文件的正确性</li>
+</ul>
+<p>可选参数如下：</p>
+<ul>
+<li><code>--b</code> 设置区块数目</li>
+<li><code>--C</code> 切换到指定目录</li>
+<li><code>--f</code> 指定压缩文件</li>
+<li><code>---help</code> 显示帮助信息</li>
+<li><code>---version</code> 显示版本信息</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">tar </div><div class="line">解包：tar xvf FileName.tar</div><div class="line">打包：tar cvf FileName.tar DirName</div><div class="line">（注：tar是打包，不是压缩！）</div><div class="line"></div><div class="line">.gz</div><div class="line">解压1：gunzip FileName.gz</div><div class="line">解压2：gzip -d FileName.gz</div><div class="line">压缩：gzip FileName</div><div class="line">.tar.gz 和 .tgz</div><div class="line">解压：tar zxvf FileName.tar.gz</div><div class="line">压缩：tar zcvf FileName.tar.gz DirName</div><div class="line"></div><div class="line">.bz2</div><div class="line">解压1：bzip2 -d FileName.bz2</div><div class="line">解压2：bunzip2 FileName.bz2</div><div class="line">压缩： bzip2 -z FileName</div><div class="line">.tar.bz2</div><div class="line">解压：tar jxvf FileName.tar.bz2</div><div class="line">压缩：tar jcvf FileName.tar.bz2 DirName</div><div class="line"></div><div class="line">.bz</div><div class="line">解压1：bzip2 -d FileName.bz</div><div class="line">解压2：bunzip2 FileName.bz</div><div class="line">压缩：未知</div><div class="line">.tar.bz</div><div class="line">解压：tar jxvf FileName.tar.bz</div><div class="line">压缩：未知</div><div class="line"></div><div class="line">.Z</div><div class="line">解压：uncompress FileName.Z</div><div class="line">压缩：compress FileName</div><div class="line">.tar.Z</div><div class="line">解压：tar Zxvf FileName.tar.Z</div><div class="line">压缩：tar Zcvf FileName.tar.Z DirName</div><div class="line">.zip</div><div class="line">解压：unzip FileName.zip</div><div class="line">压缩：zip FileName.zip DirName</div><div class="line"></div><div class="line">.rar</div><div class="line">解压：rar x FileName.rar</div><div class="line">压缩：rar a FileName.rar DirName</div></pre></td></tr></table></figure>
+<h2 id="gzip"><a href="#gzip" class="headerlink" title="gzip"></a>gzip</h2><p>gzip是个使用广泛的压缩程序，文件经它压缩过后，其名称后面会多出”.gz”的扩展名。</p>
+<ul>
+<li><code>-a或--ascii</code> 使用ASCII文字模式。 </li>
+<li><code>-c或--stdout或--to-stdout</code>　把压缩后的文件输出到标准输出设备，不去更动原始文件。 </li>
+<li><code>-d或--decompress或----uncompress</code>　解开压缩文件。 </li>
+<li><code>-f或--force</code>　强行压缩文件。不理会文件名称或硬连接是否存在以及该文件是否为符号连接。 </li>
+<li><code>-h或--help</code>　在线帮助。 </li>
+<li><code>-l或--list</code>　列出压缩文件的相关信息。 </li>
+<li><code>-L或--license</code>　显示版本与版权信息。 </li>
+<li><code>-n或--no-name</code>　压缩文件时，不保存原来的文件名称及时间戳记。 </li>
+<li><code>-N或--name</code>　压缩文件时，保存原来的文件名称及时间戳记。 </li>
+<li><code>-q或--quiet</code>　不显示警告信息。 </li>
+<li><code>-r或--recursive</code>　递归处理，将指定目录下的所有文件及子目录一并处理。 </li>
+<li><code>-S&lt;压缩字尾字符串&gt;或----suffix&lt;压缩字尾字符串&gt;</code>　更改压缩字尾字符串。 </li>
+<li><code>-t或--test</code>　测试压缩文件是否正确无误。 </li>
+<li><code>-v或--verbose</code>　显示指令执行过程。 </li>
+<li><code>-V或--version</code>　显示版本信息。 </li>
+<li><code>-num</code> 用指定的数字num调整压缩的速度，-1或–fast表示最快压缩方法（低压缩比），-9或–best表示最慢压缩方法（高压缩比）。系统缺省值为6。</li>
+</ul>
+<h1 id="linux文件权限设置"><a href="#linux文件权限设置" class="headerlink" title="linux文件权限设置"></a>linux文件权限设置</h1><h2 id="chmod"><a href="#chmod" class="headerlink" title="chmod"></a>chmod</h2><p>用于改变文件或目录的访问权限，用它控制文件或目录的访问权限。</p>
+<p><code>chmod [-cfvR] [--help] [--version] mode file</code></p>
+<p>必要参数：</p>
+<ul>
+<li><code>-c</code> 当发生改变时，报告处理信息</li>
+<li><code>-f</code> 错误信息不输出</li>
+<li><code>-R</code> 处理指定目录以及其子目录下的所有文件</li>
+<li><code>-v</code> 运行时显示详细处理信息</li>
+</ul>
+<p>权限范围</p>
+<ul>
+<li><code>u</code> 目录或者文件的当前的用户</li>
+<li><code>g</code> 目录或者文件的当前的群组</li>
+<li><code>o</code> 除了目录或者文件的当前用户或群组之外的用户或者群组</li>
+<li><code>a</code> 所有的用户及群组</li>
+</ul>
+<p>权限代号</p>
+<ul>
+<li><code>r</code> 读权限，用数字4表示</li>
+<li><code>w</code> 写权限，用数字2表示</li>
+<li><code>x</code> 执行权限，用数字1表示</li>
+<li><code>-</code> 删除权限，用数字0表示</li>
+</ul>
+<h2 id="chgrp"><a href="#chgrp" class="headerlink" title="chgrp"></a>chgrp</h2><p>chgrp命令可采用群组名称或群组识别码的方式改变文件或目录的所属群组。使用权限是超级用户。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">chgrp -v bin log2012.log                        //将log2012.log文件由root群组改为bin群组</div><div class="line">chgrp --reference=log2012.log log2013.log       //使得文件log2013.log的群组属性和参考文件log2012.log的群组属性相同</div><div class="line">chgrp -R bin test6                              //改变指定目录以及其子目录下的所有文件的群组属性</div></pre></td></tr></table></figure>
+<h2 id="chown"><a href="#chown" class="headerlink" title="chown"></a>chown</h2><p>通过chown改变文件的拥有者和群组。在更改文件的所有者或所属群组时，可以使用用户名称和用户识别码设置。普通用户不能将自己的文件改变成其他的拥有者。其操作权限一般为管理员。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">chown mail:mail log2012.log       //改变拥有者和群组</div><div class="line">chown root: log2012.log           //改变文件拥有者</div><div class="line">chown :mail log2012.log           //改变文件群组</div><div class="line">chown -R -v root:mail test6       //改变指定目录以及其子目录下的所有文件的拥有者和群组</div></pre></td></tr></table></figure>
+<h1 id="磁盘存储相关"><a href="#磁盘存储相关" class="headerlink" title="磁盘存储相关"></a>磁盘存储相关</h1><h1 id="性能监控和优化命令"><a href="#性能监控和优化命令" class="headerlink" title="性能监控和优化命令"></a>性能监控和优化命令</h1><h1 id="网络命令"><a href="#网络命令" class="headerlink" title="网络命令"></a>网络命令</h1><h1 id="其他命令"><a href="#其他命令" class="headerlink" title="其他命令"></a>其他命令</h1>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+            <a href="/tags/cli/" rel="tag"># cli</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/24/homebrew/" rel="next" title="brew常用命令">
+                <i class="fa fa-chevron-left"></i> brew常用命令
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/10/sublime-text/" rel="prev" title="Sublime text3 plug-in and settings">
+                Sublime text3 plug-in and settings <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/avatar.jpg"
+               alt="Adi" />
+          <p class="site-author-name" itemprop="name">Adi</p>
+           
+              <p class="site-description motion-element" itemprop="description">I am Adi Huang</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">57</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#文件目录操作命令"><span class="nav-number">1.</span> <span class="nav-text">文件目录操作命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ls"><span class="nav-number">1.1.</span> <span class="nav-text">ls</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cd"><span class="nav-number">1.2.</span> <span class="nav-text">cd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pwd"><span class="nav-number">1.3.</span> <span class="nav-text">pwd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mkdir"><span class="nav-number">1.4.</span> <span class="nav-text">mkdir</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rm"><span class="nav-number">1.5.</span> <span class="nav-text">rm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rmdir"><span class="nav-number">1.6.</span> <span class="nav-text">rmdir</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mv"><span class="nav-number">1.7.</span> <span class="nav-text">mv</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cp"><span class="nav-number">1.8.</span> <span class="nav-text">cp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#touch"><span class="nav-number">1.9.</span> <span class="nav-text">touch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cat"><span class="nav-number">1.10.</span> <span class="nav-text">cat</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nl"><span class="nav-number">1.11.</span> <span class="nav-text">nl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#more"><span class="nav-number">1.12.</span> <span class="nav-text">more</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#less"><span class="nav-number">1.13.</span> <span class="nav-text">less</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#head"><span class="nav-number">1.14.</span> <span class="nav-text">head</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tail"><span class="nav-number">1.15.</span> <span class="nav-text">tail</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件查找命令"><span class="nav-number">2.</span> <span class="nav-text">文件查找命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#which"><span class="nav-number">2.1.</span> <span class="nav-text">which</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#whereis"><span class="nav-number">2.2.</span> <span class="nav-text">whereis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#locate"><span class="nav-number">2.3.</span> <span class="nav-text">locate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#find"><span class="nav-number">2.4.</span> <span class="nav-text">find</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件和目录属性"><span class="nav-number">3.</span> <span class="nav-text">文件和目录属性</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件打包上传和下载"><span class="nav-number">4.</span> <span class="nav-text">文件打包上传和下载</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#tar"><span class="nav-number">4.1.</span> <span class="nav-text">tar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gzip"><span class="nav-number">4.2.</span> <span class="nav-text">gzip</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linux文件权限设置"><span class="nav-number">5.</span> <span class="nav-text">linux文件权限设置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#chmod"><span class="nav-number">5.1.</span> <span class="nav-text">chmod</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chgrp"><span class="nav-number">5.2.</span> <span class="nav-text">chgrp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#chown"><span class="nav-number">5.3.</span> <span class="nav-text">chown</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#磁盘存储相关"><span class="nav-number">6.</span> <span class="nav-text">磁盘存储相关</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#性能监控和优化命令"><span class="nav-number">7.</span> <span class="nav-text">性能监控和优化命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络命令"><span class="nav-number">8.</span> <span class="nav-text">网络命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他命令"><span class="nav-number">9.</span> <span class="nav-text">其他命令</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Adi</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.1"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

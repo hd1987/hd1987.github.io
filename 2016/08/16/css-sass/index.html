@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next mist" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="css,sass," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="一、什么是SASSSASS是一种CSS的开发工具，提供了许多便利的写法，大大节省了设计者的时间，使得CSS的开发，变得简单和可维护。 二、安装和使用2.1 安装 SASS是Ruby语言写的，但是两者的语法没有关系。不懂Ruby，照样使用。只是必须先安装Ruby，然后再安装SASS。 假定你已经安装好了Ruby，接着在命令行输入下面的命令： 1gem install sass 然后，就可以使用了。">
+<meta name="keywords" content="css,sass">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SASS用法指南">
+<meta property="og:url" content="/2016/08/16/css-sass/index.html">
+<meta property="og:site_name" content="Adi &amp; FE">
+<meta property="og:description" content="一、什么是SASSSASS是一种CSS的开发工具，提供了许多便利的写法，大大节省了设计者的时间，使得CSS的开发，变得简单和可维护。 二、安装和使用2.1 安装 SASS是Ruby语言写的，但是两者的语法没有关系。不懂Ruby，照样使用。只是必须先安装Ruby，然后再安装SASS。 假定你已经安装好了Ruby，接着在命令行输入下面的命令： 1gem install sass 然后，就可以使用了。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2016-12-06T06:29:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SASS用法指南">
+<meta name="twitter:description" content="一、什么是SASSSASS是一种CSS的开发工具，提供了许多便利的写法，大大节省了设计者的时间，使得CSS的开发，变得简单和可维护。 二、安装和使用2.1 安装 SASS是Ruby语言写的，但是两者的语法没有关系。不懂Ruby，照样使用。只是必须先安装Ruby，然后再安装SASS。 假定你已经安装好了Ruby，接着在命令行输入下面的命令： 1gem install sass 然后，就可以使用了。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="/2016/08/16/css-sass/"/>
+
+
+
+
+
+  <title>SASS用法指南 | Adi & FE</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Adi & FE</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="/2016/08/16/css-sass/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Adi">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Adi & FE">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">SASS用法指南</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-16T14:20:29+08:00">
+                2016-08-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="一、什么是SASS"><a href="#一、什么是SASS" class="headerlink" title="一、什么是SASS"></a>一、什么是SASS</h2><p>SASS是一种CSS的开发工具，提供了许多便利的写法，大大节省了设计者的时间，使得CSS的开发，变得简单和可维护。</p>
+<h2 id="二、安装和使用"><a href="#二、安装和使用" class="headerlink" title="二、安装和使用"></a>二、安装和使用</h2><p><strong>2.1 安装</strong></p>
+<p>SASS是Ruby语言写的，但是两者的语法没有关系。不懂Ruby，照样使用。只是必须先安装Ruby，然后再安装SASS。</p>
+<p>假定你已经安装好了Ruby，接着在命令行输入下面的命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gem install sass</div></pre></td></tr></table></figure>
+<p>然后，就可以使用了。</p>
+<a id="more"></a>
+<p><strong>2.2 使用</strong></p>
+<p>SASS文件就是普通的文本文件，里面可以直接使用CSS语法。文件后缀名是.scss，意思为Sassy CSS。</p>
+<p>下面的命令，可以在屏幕上显示.scss文件转化的css代码。（假设文件名为test。）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sass test.scss</div></pre></td></tr></table></figure>
+<p>如果要将显示结果保存成文件，后面再跟一个.css文件名。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sass test.scss test.css</div></pre></td></tr></table></figure>
+<p>SASS提供四个编译风格的选项：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">* nested：嵌套缩进的css代码，它是默认值。</div><div class="line">* expanded：没有缩进的、扩展的css代码。</div><div class="line">* compact：简洁格式的css代码。</div><div class="line">* compressed：压缩后的css代码。</div></pre></td></tr></table></figure>
+<p>生产环境当中，一般使用最后一个选项。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sass --style compressed test.sass test.css</div></pre></td></tr></table></figure>
+<p>你也可以让SASS监听某个文件或目录，一旦源文件有变动，就自动生成编译后的版本。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// watch a file</div><div class="line">sass --watch input.scss:output.css</div><div class="line">// watch a directory</div><div class="line">sass --watch app/sass:public/stylesheets</div></pre></td></tr></table></figure>
+<h2 id="三、基本用法"><a href="#三、基本用法" class="headerlink" title="三、基本用法"></a>三、基本用法</h2><p><strong>3.1 变量</strong></p>
+<p>SASS允许使用变量，所有变量以$开头。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$blue : #1875e7;　</div><div class="line"><span class="selector-tag">div</span> &#123;</div><div class="line">　<span class="attribute">color </span>: $blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如果变量需要镶嵌在字符串之中，就必须需要写在#{}之中。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$side : left;</div><div class="line"><span class="selector-class">.rounded</span> &#123;</div><div class="line">　　border-#&#123;$side&#125;-radius: 5px;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>3.2 计算功能</strong></p>
+<p>SASS允许在代码中使用算式：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">　　<span class="attribute">margin</span>: (<span class="number">14px</span>/<span class="number">2</span>);</div><div class="line">　　<span class="attribute">top</span>: <span class="number">50px</span> + <span class="number">100px</span>;</div><div class="line">　　<span class="attribute">right</span>: $var * <span class="number">10%</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>3.3 嵌套</strong></p>
+<p>SASS允许选择器嵌套。比如，下面的CSS代码：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span> <span class="selector-tag">h1</span> &#123;</div><div class="line">　　<span class="attribute">color </span>: red;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>可以写成：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span> &#123;</div><div class="line">　　hi &#123;</div><div class="line">　　　　<span class="selector-tag">color</span><span class="selector-pseudo">:red</span>;</div><div class="line">　　&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>属性也可以嵌套，比如border-color属性，可以写成：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">　　<span class="attribute">border</span>: &#123;</div><div class="line">　　　　color: red;</div><div class="line">　　&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>注意，border后面必须加上冒号。</p>
+<p>在嵌套的代码块内，可以使用&amp;引用父元素。比如a:hover伪类，可以写成：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">a</span> &#123;</div><div class="line">　　&amp;:hover &#123; color: #ffb3ff; &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>3.4 注释</strong></p>
+<p>SASS共有两种注释风格。</p>
+<p>标准的CSS注释 /<em> comment </em>/ ，会保留到编译后的文件。</p>
+<p>单行注释 // comment，只保留在SASS源文件中，编译后被省略。</p>
+<p>在/*后面加一个感叹号，表示这是”重要注释”。即使是压缩模式编译，也会保留这行注释，通常可以用于声明版权信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">/*! </div><div class="line">　　重要注释！</div><div class="line">*/</div></pre></td></tr></table></figure>
+<h2 id="四、代码的重用"><a href="#四、代码的重用" class="headerlink" title="四、代码的重用"></a>四、代码的重用</h2><p><strong>4.1 继承</strong></p>
+<p>SASS允许一个选择器，继承另一个选择器。比如，现有class1：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.class1</span> &#123;</div><div class="line">　　<span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ddd</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>class2要继承class1，就要使用@extend命令：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.class2</span> &#123;</div><div class="line">　　@extend .class1;</div><div class="line">　　<span class="selector-tag">font-size</span><span class="selector-pseudo">:120</span>%;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>4.2 Mixin</strong></p>
+<p>Mixin有点像C语言的宏（macro），是可以重用的代码块。</p>
+<p>使用@mixin命令，定义一个代码块。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> left &#123;</div><div class="line">　　<span class="selector-tag">float</span>: <span class="selector-tag">left</span>;</div><div class="line">　　<span class="selector-tag">margin-left</span>: 10<span class="selector-tag">px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>使用@include命令，调用这个mixin。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span> &#123;</div><div class="line">　　@include left;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>mixin的强大之处，在于可以指定参数和缺省值。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> left($value: <span class="number">10px</span>) &#123;</div><div class="line">　　<span class="selector-tag">float</span>: <span class="selector-tag">left</span>;</div><div class="line">　　margin-right: $value;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>使用的时候，根据需要加入参数：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">div</span> &#123;</div><div class="line">　　@include left(20px);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>下面是一个mixin的实例，用来生成浏览器前缀。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">mixin</span> rounded($vert, $horz, $radius: <span class="number">10px</span>) &#123;</div><div class="line">　　border-#&#123;$vert&#125;-#&#123;$horz&#125;-radius: $radius;</div><div class="line">　　-moz-border-radius-#&#123;$vert&#125;#&#123;$horz&#125;: $radius;</div><div class="line">　　-webkit-border-#&#123;$vert&#125;-#&#123;$horz&#125;-radius: $radius;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>使用的时候，可以像下面这样调用：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">#navbar li &#123; @include rounded(top, left); &#125;</div><div class="line">#footer &#123; @include rounded(top, left, 5px); &#125;</div></pre></td></tr></table></figure>
+<p><strong>4.3 颜色函数</strong></p>
+<p>SASS提供了一些内置的颜色函数，以便生成系列颜色。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">lighten(#cc3, 10%) // #d6d65c</div><div class="line">darken(#cc3, 10%) // #a3a329</div><div class="line">grayscale(#cc3) // #808080</div><div class="line">complement(#cc3) // #33c</div></pre></td></tr></table></figure>
+<p><strong>4.4 插入文件</strong></p>
+<p>@import命令，用来插入外部文件。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">import</span> <span class="string">"path/filename.scss"</span>;</div></pre></td></tr></table></figure>
+<p>如果插入的是.css文件，则等同于css的import命令。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">import</span> <span class="string">"foo.css"</span>;</div></pre></td></tr></table></figure>
+<h2 id="五、高级用法"><a href="#五、高级用法" class="headerlink" title="五、高级用法"></a>五、高级用法</h2><p><strong>5.1 条件语句</strong></p>
+<p>@if可以用来判断：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">　　@if 1 + 1 == 2 &#123; border: 1px solid; &#125;</div><div class="line">　　@<span class="keyword">if</span> <span class="number">5</span> &lt; <span class="number">3</span> &#123; <span class="selector-tag">border</span>: 2<span class="selector-tag">px</span> <span class="selector-tag">dotted</span>; &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>配套的还有@else命令：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">if</span> lightness($color) &gt; <span class="number">30%</span> &#123;</div><div class="line">　　<span class="selector-tag">background-color</span>: <span class="selector-id">#000</span>;</div><div class="line">&#125; @<span class="keyword">else</span> &#123;</div><div class="line">　　<span class="selector-tag">background-color</span>: <span class="selector-id">#fff</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>5.2 循环语句</strong></p>
+<p>SASS支持for循环：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">for</span> $i from <span class="number">1</span> to <span class="number">10</span> &#123;</div><div class="line">　　.border-#&#123;$i&#125; &#123;</div><div class="line">　　　　border: #&#123;$i&#125;px solid blue;</div><div class="line">　　&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>也支持while循环：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$i: 6;</div><div class="line">@<span class="keyword">while</span> $i &gt; <span class="number">0</span> &#123;</div><div class="line">　　.item-#&#123;$i&#125; &#123; width: 2em * $i; &#125;</div><div class="line">　　$i: $i - 2;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>each命令，作用与for类似：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">each</span> $member in a, b, c, d &#123;</div><div class="line">　　.#&#123;$member&#125; &#123;</div><div class="line">　　　　background-image: url("/image/#&#123;$member&#125;.jpg");</div><div class="line">　　&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong>5.3 自定义函数</strong></p>
+<p>SASS允许用户编写自己的函数。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">function</span> double($n) &#123;</div><div class="line">　　@<span class="keyword">return</span> $n * <span class="number">2</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#sidebar</span> &#123;</div><div class="line">　　<span class="attribute">width</span>: <span class="built_in">double</span>(5px);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css/" rel="tag"># css</a>
+          
+            <a href="/tags/sass/" rel="tag"># sass</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/16/js-fastclickjs/" rel="next" title="fastclick.js插件使用简单说明">
+                <i class="fa fa-chevron-left"></i> fastclick.js插件使用简单说明
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/09/27/js-extend/" rel="prev" title="jQuery插件的基本格式写法">
+                jQuery插件的基本格式写法 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/avatar.jpg"
+               alt="Adi" />
+          <p class="site-author-name" itemprop="name">Adi</p>
+           
+              <p class="site-description motion-element" itemprop="description">I am Adi Huang</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">57</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、什么是SASS"><span class="nav-number">1.</span> <span class="nav-text">一、什么是SASS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、安装和使用"><span class="nav-number">2.</span> <span class="nav-text">二、安装和使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、基本用法"><span class="nav-number">3.</span> <span class="nav-text">三、基本用法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、代码的重用"><span class="nav-number">4.</span> <span class="nav-text">四、代码的重用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、高级用法"><span class="nav-number">5.</span> <span class="nav-text">五、高级用法</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Adi</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.1"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
