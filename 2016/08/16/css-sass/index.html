@@ -85,7 +85,7 @@
 <meta property="og:site_name" content="AdiHuang">
 <meta property="og:description" content="一、什么是SASSSASS是一种CSS的开发工具，提供了许多便利的写法，大大节省了设计者的时间，使得CSS的开发，变得简单和可维护。 二、安装和使用2.1 安装 SASS是Ruby语言写的，但是两者的语法没有关系。不懂Ruby，照样使用。只是必须先安装Ruby，然后再安装SASS。 假定你已经安装好了Ruby，接着在命令行输入下面的命令： 1gem install sass 然后，就可以使用了。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2016-12-06T06:29:36.000Z">
+<meta property="og:updated_time" content="2018-02-06T02:52:19.429Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SASS用法指南">
 <meta name="twitter:description" content="一、什么是SASSSASS是一种CSS的开发工具，提供了许多便利的写法，大大节省了设计者的时间，使得CSS的开发，变得简单和可维护。 二、安装和使用2.1 安装 SASS是Ruby语言写的，但是两者的语法没有关系。不懂Ruby，照样使用。只是必须先安装Ruby，然后再安装SASS。 假定你已经安装好了Ruby，接着在命令行输入下面的命令： 1gem install sass 然后，就可以使用了。">
@@ -357,6 +357,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sass --style compressed test.sass test.css</div></pre></td></tr></table></figure>
 <p>你也可以让SASS监听某个文件或目录，一旦源文件有变动，就自动生成编译后的版本。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// watch a file</div><div class="line">sass --watch input.scss:output.css</div><div class="line">// watch a directory</div><div class="line">sass --watch app/sass:public/stylesheets</div></pre></td></tr></table></figure>
+<p>常用命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sass --watch sass:css --style compressed</div></pre></td></tr></table></figure></p>
 <h2 id="三、基本用法"><a href="#三、基本用法" class="headerlink" title="三、基本用法"></a>三、基本用法</h2><p><strong>3.1 变量</strong></p>
 <p>SASS允许使用变量，所有变量以$开头。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$blue : #1875e7;　</div><div class="line"><span class="selector-tag">div</span> &#123;</div><div class="line">　<span class="attribute">color </span>: $blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
