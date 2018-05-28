@@ -80,14 +80,14 @@
 <meta name="description" content=".gitignore1234567# 此为注释 – 将被 Git 忽略*.a         # 忽略所有 .a 结尾的文件!lib.a      # 但 lib.a 除外/TODO       # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODObuild/      # 忽略 build/ 目录下的所有文件doc/*.txt   # 会忽略 doc/notes.txt 但">
 <meta name="keywords" content="git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git忽略一些文件不加入版本控制">
+<meta property="og:title" content="Git 忽略文件不加入版本控制">
 <meta property="og:url" content="/2018/05/28/git-ignore/index.html">
 <meta property="og:site_name" content="AdiHuang">
 <meta property="og:description" content=".gitignore1234567# 此为注释 – 将被 Git 忽略*.a         # 忽略所有 .a 结尾的文件!lib.a      # 但 lib.a 除外/TODO       # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODObuild/      # 忽略 build/ 目录下的所有文件doc/*.txt   # 会忽略 doc/notes.txt 但">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-28T07:13:04.406Z">
+<meta property="og:updated_time" content="2018-05-28T07:16:45.852Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Git忽略一些文件不加入版本控制">
+<meta name="twitter:title" content="Git 忽略文件不加入版本控制">
 <meta name="twitter:description" content=".gitignore1234567# 此为注释 – 将被 Git 忽略*.a         # 忽略所有 .a 结尾的文件!lib.a      # 但 lib.a 除外/TODO       # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODObuild/      # 忽略 build/ 目录下的所有文件doc/*.txt   # 会忽略 doc/notes.txt 但">
 
 
@@ -124,7 +124,7 @@
 
 
 
-  <title>Git忽略一些文件不加入版本控制 | AdiHuang</title>
+  <title>Git 忽略文件不加入版本控制 | AdiHuang</title>
   
 
 
@@ -288,7 +288,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Git忽略一些文件不加入版本控制</h1>
+          <h1 class="post-title" itemprop="name headline">Git 忽略文件不加入版本控制</h1>
         
 
         <div class="post-meta">
@@ -349,7 +349,7 @@
 <li><code>[ ^abc]</code> : 代表必须不是a,b,c中任一字符</li>
 </ul>
 <h2 id="gitignoreglobal"><a href="#gitignoreglobal" class="headerlink" title=".gitignoreglobal"></a>.gitignoreglobal</h2><p>在用户目录下创建 <code>~/.gitignoreglobal</code> 文件,<br>需要执行 <code>git config --global core.excludesfile ~/.gitignoreglobal</code> 来使得它生效。</p>
-<h2 id="忽略本地的文件控制，不影响全局"><a href="#忽略本地的文件控制，不影响全局" class="headerlink" title="忽略本地的文件控制，不影响全局"></a>忽略本地的文件控制，不影响全局</h2><p><code>.git/info/exclude</code> 这里设置的是你自己本地需要排除的文件。 他不会影响到其他人。也不会提交到版本库中去。</p>
+<h2 id="忽略本地的文件控制，不影响全局"><a href="#忽略本地的文件控制，不影响全局" class="headerlink" title="忽略本地的文件控制，不影响全局"></a>忽略本地的文件控制，不影响全局</h2><p><code>.git/info/exclude</code> 这里设置的是你自己本地需要排除的文件，他不会影响到其他人，也不会提交到版本库中去。</p>
 <h2 id="去除已经提交文件的版本控制（公共）"><a href="#去除已经提交文件的版本控制（公共）" class="headerlink" title="去除已经提交文件的版本控制（公共）"></a>去除已经提交文件的版本控制（公共）</h2><ol>
 <li><code>rm -rf PATH</code></li>
 <li><code>git rm -r --cached PATH</code></li>
