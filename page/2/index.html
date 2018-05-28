@@ -270,6 +270,127 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="/2017/01/14/js-body-noscroll/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AdiHuang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AdiHuang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/01/14/js-body-noscroll/" itemprop="url">当弹出popup悬浮层时，禁止body滚动</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-14T21:41:14+08:00">
+                2017-01-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>示例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!doctype html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"format-detection"</span> <span class="attr">content</span>=<span class="string">"telephone=no"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>test<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="css"><span class="selector-tag">p</span> &#123; <span class="attribute">line-height</span>: <span class="number">110px</span>; &#125;</span></div><div class="line"><span class="css"><span class="selector-class">.btn</span> &#123; <span class="attribute">position</span>: fixed; <span class="attribute">top</span>: <span class="number">10px</span>; <span class="attribute">right</span>: <span class="number">10px</span>; <span class="attribute">z-index</span>: <span class="number">9</span>; <span class="attribute">padding</span>: <span class="number">5px</span> <span class="number">10px</span>; <span class="attribute">color</span>: <span class="number">#fff</span>; <span class="attribute">background</span>: <span class="number">#c00</span>; &#125;</span></div><div class="line"><span class="css"><span class="selector-class">.mask</span> &#123; <span class="attribute">position</span>: fixed; <span class="attribute">top</span>: <span class="number">0</span>; <span class="attribute">right</span>: <span class="number">0</span>; <span class="attribute">bottom</span>: <span class="number">0</span>; <span class="attribute">left</span>: <span class="number">0</span>; <span class="attribute">background</span>: <span class="built_in">rgba</span>(0,0,0,.5); <span class="attribute">z-index</span>: <span class="number">99</span>; <span class="attribute">display</span>: none; &#125;</span></div><div class="line"><span class="css"><span class="selector-class">.popup</span> &#123; <span class="attribute">position</span>: fixed; <span class="attribute">top</span>: <span class="number">0</span>; <span class="attribute">right</span>: <span class="number">0</span>; <span class="attribute">bottom</span>: <span class="number">0</span>; <span class="attribute">left</span>: <span class="number">40px</span>; <span class="attribute">background</span>: <span class="number">#fff</span>; <span class="attribute">z-index</span>: <span class="number">101</span>; <span class="attribute">overflow-y</span>: auto; <span class="attribute">display</span>: none; &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"btn"</span>&gt;</span>Click<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"main"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>111<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>222<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>333<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>444<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>555<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>666<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>777<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>888<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>999<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"mask"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"popup"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>111<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>222<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>333<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>444<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>555<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>666<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>777<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>888<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>999<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery-1.10.1.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript"><span class="keyword">var</span> $body = $(<span class="string">'body'</span>),</span></div><div class="line"><span class="undefined">    scrollTop;</span></div><div class="line"><span class="undefined"></span></div><div class="line"><span class="javascript">$(<span class="string">'.btn'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></div><div class="line"><span class="javascript">  $(<span class="string">'.mask, .popup'</span>).show();</span></div><div class="line"><span class="javascript">  scrollTop = $body.scrollTop(); <span class="comment">//body设置为fixed之后会飘到顶部，所以要动态计算当前用户所在高度</span></span></div><div class="line"><span class="undefined">  $body.css(&#123;</span></div><div class="line"><span class="javascript">      <span class="string">'overflow'</span>:<span class="string">'hidden'</span>,</span></div><div class="line"><span class="javascript">      <span class="string">'position'</span>: <span class="string">'fixed'</span>,</span></div><div class="line"><span class="javascript">      <span class="string">'top'</span>: scrollTop*<span class="number">-1</span></span></div><div class="line"><span class="undefined">  &#125;);</span></div><div class="line"><span class="undefined">&#125;);</span></div><div class="line"><span class="undefined"></span></div><div class="line"><span class="javascript">$(<span class="string">'.mask'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></div><div class="line"><span class="javascript">  $(<span class="string">'.mask, .popup'</span>).hide();</span></div><div class="line"><span class="javascript">  <span class="comment">/*取消后设置回来*/</span></span></div><div class="line"><span class="undefined">  $body.css(&#123;</span></div><div class="line"><span class="javascript">      <span class="string">'overflow'</span>:<span class="string">'auto'</span>,</span></div><div class="line"><span class="javascript">      <span class="string">'position'</span>: <span class="string">'static'</span>,</span></div><div class="line"><span class="javascript">      <span class="string">'top'</span>: <span class="string">'auto'</span></span></div><div class="line"><span class="undefined">  &#125;).animate(&#123; scrollTop: scrollTop &#125;, 0);</span></div><div class="line"><span class="undefined">&#125;);</span></div><div class="line"><span class="undefined"></span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="/2016/12/06/css-sass-border/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1383,128 +1504,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="/2016/07/23/php-http/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AdiHuang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AdiHuang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/07/23/php-http/" itemprop="url">php发出http(post,get)请求</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-23T23:33:23+08:00">
-                2016-07-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>web service model很多时候需要使用别的web service来建造自己的web service，这就需要到使用服务器端进行请求http操作，post或者get请求。</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * PHP发送请求获取数据</span></div><div class="line"><span class="comment"> * <span class="doctag">@param</span>  [type] $url       [description]</span></div><div class="line"><span class="comment"> * <span class="doctag">@param</span>  [type] $post_data [description]</span></div><div class="line"><span class="comment"> * <span class="doctag">@return</span> [type] $result    [description]</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">send_post</span><span class="params">($url, $post_data)</span> </span>&#123;</div><div class="line">    $postdata = http_build_query($post_data);</div><div class="line">    $options = <span class="keyword">array</span>(</div><div class="line">        <span class="string">'http'</span> =&gt; <span class="keyword">array</span>(</div><div class="line">        <span class="string">'method'</span> =&gt; <span class="string">'POST'</span>,<span class="comment">//or GET</span></div><div class="line">        <span class="string">'header'</span> =&gt; <span class="string">'Content-type:application/x-www-form-urlencoded'</span>,</div><div class="line">        <span class="string">'content'</span> =&gt; $postdata,</div><div class="line">        <span class="string">'timeout'</span> =&gt; <span class="number">15</span> * <span class="number">60</span> <span class="comment">// 超时时间（单位:s）</span></div><div class="line">        )</div><div class="line">    );</div><div class="line">    $context = stream_context_create($options);</div><div class="line">    $result = file_get_contents($url, <span class="keyword">false</span>, $context);</div><div class="line">    <span class="keyword">return</span> $result;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>以上是发送请求的函数，具体操作如下：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//使用方法</span></div><div class="line">$post_data = <span class="keyword">array</span>(</div><div class="line">    <span class="string">'username'</span> =&gt; <span class="string">'stclair2201'</span>,</div><div class="line">    <span class="string">'password'</span> =&gt; <span class="string">'handan'</span></div><div class="line">);</div><div class="line">$result=send_post(<span class="string">'http://localhost/ServiceProvider/index.php/Index/getService'</span>, $post_data);</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1559,7 +1558,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

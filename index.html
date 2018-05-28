@@ -270,6 +270,146 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="/2018/05/28/git-ignore/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AdiHuang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AdiHuang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/28/git-ignore/" itemprop="url">Git忽略一些文件不加入版本控制</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-28T14:27:59+08:00">
+                2018-05-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="gitignore"><a href="#gitignore" class="headerlink" title=".gitignore"></a>.gitignore</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"># 此为注释 – 将被 Git 忽略</div><div class="line">*.a         # 忽略所有 .a 结尾的文件</div><div class="line">!lib.a      # 但 lib.a 除外</div><div class="line">/TODO       # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO</div><div class="line">build/      # 忽略 build/ 目录下的所有文件</div><div class="line">doc/*.txt   # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt</div><div class="line">tmp/*       # 忽略tmp文件夹所有文件，因为git不会加入空目录</div></pre></td></tr></table></figure>
+<p>其它过滤条件</p>
+<ul>
+<li><code>？</code> : 代表任意的一个字符</li>
+<li><code>＊</code> : 代表任意数目的字符</li>
+<li><code>{!ab}</code> : 必须不是此类型</li>
+<li><code>{ab,bb,cx}</code> : 代表ab,bb,cx中任一类型即可</li>
+<li><code>[abc]</code> : 代表a,b,c中任一字符即可</li>
+<li><code>[ ^abc]</code> : 代表必须不是a,b,c中任一字符</li>
+</ul>
+<h2 id="gitignoreglobal"><a href="#gitignoreglobal" class="headerlink" title=".gitignoreglobal"></a>.gitignoreglobal</h2><p>在用户目录下创建 <code>~/.gitignoreglobal</code> 文件,<br>需要执行 <code>git config --global core.excludesfile ~/.gitignoreglobal</code> 来使得它生效。</p>
+<h2 id="忽略本地的文件控制，不影响全局"><a href="#忽略本地的文件控制，不影响全局" class="headerlink" title="忽略本地的文件控制，不影响全局"></a>忽略本地的文件控制，不影响全局</h2><p><code>.git/info/exclude</code> 这里设置的是你自己本地需要排除的文件。 他不会影响到其他人。也不会提交到版本库中去。</p>
+<h2 id="去除已经提交文件的版本控制（公共）"><a href="#去除已经提交文件的版本控制（公共）" class="headerlink" title="去除已经提交文件的版本控制（公共）"></a>去除已经提交文件的版本控制（公共）</h2><ol>
+<li><code>rm -rf PATH</code></li>
+<li><code>git rm -r --cached PATH</code></li>
+<li>修改<code>.gitignore</code>，添加忽略文件</li>
+<li><code>git add -A</code></li>
+<li><code>git push</code></li>
+</ol>
+<h2 id="忽略已经提交到版本库的文件（本地）"><a href="#忽略已经提交到版本库的文件（本地）" class="headerlink" title="忽略已经提交到版本库的文件（本地）"></a>忽略已经提交到版本库的文件（本地）</h2><p><code>git update-index --assume-unchanged PATH</code>      # 忽略跟踪<br><code>git update-index --no-assume-unchanged PATH</code>   #恢复跟踪</p>
+<h2 id="提交空的目录树"><a href="#提交空的目录树" class="headerlink" title="提交空的目录树"></a>提交空的目录树</h2><p>需要提交一个空的 log 目录时，在里面放置一个空的<code>.gitignore</code></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="/2018/02/22/npm-create-react-app/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1464,127 +1604,6 @@ mv dir1 dir2                      # 将文件或目录重新命名,或者将文�
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="/2017/01/14/js-body-noscroll/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AdiHuang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AdiHuang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/01/14/js-body-noscroll/" itemprop="url">当弹出popup悬浮层时，禁止body滚动</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-01-14T21:41:14+08:00">
-                2017-01-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>示例：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!doctype html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"format-detection"</span> <span class="attr">content</span>=<span class="string">"telephone=no"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>test<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="css"><span class="selector-tag">p</span> &#123; <span class="attribute">line-height</span>: <span class="number">110px</span>; &#125;</span></div><div class="line"><span class="css"><span class="selector-class">.btn</span> &#123; <span class="attribute">position</span>: fixed; <span class="attribute">top</span>: <span class="number">10px</span>; <span class="attribute">right</span>: <span class="number">10px</span>; <span class="attribute">z-index</span>: <span class="number">9</span>; <span class="attribute">padding</span>: <span class="number">5px</span> <span class="number">10px</span>; <span class="attribute">color</span>: <span class="number">#fff</span>; <span class="attribute">background</span>: <span class="number">#c00</span>; &#125;</span></div><div class="line"><span class="css"><span class="selector-class">.mask</span> &#123; <span class="attribute">position</span>: fixed; <span class="attribute">top</span>: <span class="number">0</span>; <span class="attribute">right</span>: <span class="number">0</span>; <span class="attribute">bottom</span>: <span class="number">0</span>; <span class="attribute">left</span>: <span class="number">0</span>; <span class="attribute">background</span>: <span class="built_in">rgba</span>(0,0,0,.5); <span class="attribute">z-index</span>: <span class="number">99</span>; <span class="attribute">display</span>: none; &#125;</span></div><div class="line"><span class="css"><span class="selector-class">.popup</span> &#123; <span class="attribute">position</span>: fixed; <span class="attribute">top</span>: <span class="number">0</span>; <span class="attribute">right</span>: <span class="number">0</span>; <span class="attribute">bottom</span>: <span class="number">0</span>; <span class="attribute">left</span>: <span class="number">40px</span>; <span class="attribute">background</span>: <span class="number">#fff</span>; <span class="attribute">z-index</span>: <span class="number">101</span>; <span class="attribute">overflow-y</span>: auto; <span class="attribute">display</span>: none; &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"btn"</span>&gt;</span>Click<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"main"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>111<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>222<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>333<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>444<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>555<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>666<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>777<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>888<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>999<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"mask"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"popup"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>111<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>222<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>333<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>444<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>555<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>666<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>777<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>888<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>999<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"jquery-1.10.1.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript"><span class="keyword">var</span> $body = $(<span class="string">'body'</span>),</span></div><div class="line"><span class="undefined">    scrollTop;</span></div><div class="line"><span class="undefined"></span></div><div class="line"><span class="javascript">$(<span class="string">'.btn'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></div><div class="line"><span class="javascript">  $(<span class="string">'.mask, .popup'</span>).show();</span></div><div class="line"><span class="javascript">  scrollTop = $body.scrollTop(); <span class="comment">//body设置为fixed之后会飘到顶部，所以要动态计算当前用户所在高度</span></span></div><div class="line"><span class="undefined">  $body.css(&#123;</span></div><div class="line"><span class="javascript">      <span class="string">'overflow'</span>:<span class="string">'hidden'</span>,</span></div><div class="line"><span class="javascript">      <span class="string">'position'</span>: <span class="string">'fixed'</span>,</span></div><div class="line"><span class="javascript">      <span class="string">'top'</span>: scrollTop*<span class="number">-1</span></span></div><div class="line"><span class="undefined">  &#125;);</span></div><div class="line"><span class="undefined">&#125;);</span></div><div class="line"><span class="undefined"></span></div><div class="line"><span class="javascript">$(<span class="string">'.mask'</span>).on(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></div><div class="line"><span class="javascript">  $(<span class="string">'.mask, .popup'</span>).hide();</span></div><div class="line"><span class="javascript">  <span class="comment">/*取消后设置回来*/</span></span></div><div class="line"><span class="undefined">  $body.css(&#123;</span></div><div class="line"><span class="javascript">      <span class="string">'overflow'</span>:<span class="string">'auto'</span>,</span></div><div class="line"><span class="javascript">      <span class="string">'position'</span>: <span class="string">'static'</span>,</span></div><div class="line"><span class="javascript">      <span class="string">'top'</span>: <span class="string">'auto'</span></span></div><div class="line"><span class="undefined">  &#125;).animate(&#123; scrollTop: scrollTop &#125;, 0);</span></div><div class="line"><span class="undefined">&#125;);</span></div><div class="line"><span class="undefined"></span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1639,7 +1658,7 @@ mv dir1 dir2                      # 将文件或目录重新命名,或者将文�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-count">59</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
