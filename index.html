@@ -270,6 +270,200 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="/2018/05/31/webpack-basic-applications/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AdiHuang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AdiHuang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/31/webpack-basic-applications/" itemprop="url">webpack 基本的应用设置示例</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-31T11:40:24+08:00">
+                2018-05-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><ul>
+<li>dist<ul>
+<li>font<ul>
+<li>…</li>
+</ul>
+</li>
+<li>images<ul>
+<li>…</li>
+</ul>
+</li>
+<li>js<ul>
+<li>module<ul>
+<li>loading.js</li>
+<li>…</li>
+</ul>
+</li>
+<li>index.js</li>
+</ul>
+</li>
+<li>css<ul>
+<li>style.css</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>node_modules</li>
+<li>src<ul>
+<li>font<ul>
+<li>…</li>
+</ul>
+</li>
+<li>images<ul>
+<li>…</li>
+</ul>
+</li>
+<li>js<ul>
+<li>index.js</li>
+</ul>
+</li>
+<li>scss<ul>
+<li>base<ul>
+<li>…</li>
+</ul>
+</li>
+<li>function<ul>
+<li>…</li>
+</ul>
+</li>
+<li>layout<ul>
+<li>…</li>
+</ul>
+</li>
+<li>mixin<ul>
+<li>…</li>
+</ul>
+</li>
+<li>_variables.scss</li>
+<li>style.scss</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>package.json</li>
+<li>webpack.config.js</li>
+<li>webpack.config.entry.js（把需要编译的多个js入口单独写配置文件）</li>
+</ul>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><ul>
+<li><code>npm install</code>  安装命令（仅需执行一次）</li>
+<li><code>npm start</code>    启动命令，对应package.json文件中的scripts</li>
+</ul>
+<h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"name"</span>: <span class="string">"index"</span>,</div><div class="line">  <span class="attr">"version"</span>: <span class="string">"1.0.0"</span>,</div><div class="line">  <span class="attr">"scripts"</span>: &#123;</div><div class="line">    <span class="attr">"start"</span>: <span class="string">"webpack -w --progress"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"dependencies"</span>: &#123;</div><div class="line">    <span class="attr">"babel-core"</span>: <span class="string">"^6.24.1"</span>,</div><div class="line">    <span class="attr">"babel-loader"</span>: <span class="string">"^7.0.0"</span>,</div><div class="line">    <span class="attr">"babel-preset-es2015"</span>: <span class="string">"^6.24.1"</span>,</div><div class="line">    <span class="attr">"file-loader"</span>: <span class="string">"^0.11.2"</span>,</div><div class="line">    <span class="attr">"webpack"</span>: <span class="string">"^2.5.1"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"devDependencies"</span>: &#123;</div><div class="line">    <span class="attr">"autoprefixer-loader"</span>: <span class="string">"^3.2.0"</span>,</div><div class="line">    <span class="attr">"css-loader"</span>: <span class="string">"^0.28.1"</span>,</div><div class="line">    <span class="attr">"extract-text-webpack-plugin"</span>: <span class="string">"^2.1.0"</span>,</div><div class="line">    <span class="attr">"node-sass"</span>: <span class="string">"^4.5.2"</span>,</div><div class="line">    <span class="attr">"optimize-css-assets-webpack-plugin"</span>: <span class="string">"^3.0.0"</span>,</div><div class="line">    <span class="attr">"sass-loader"</span>: <span class="string">"^6.0.5"</span>,</div><div class="line">    <span class="attr">"style-loader"</span>: <span class="string">"^0.17.0"</span>,</div><div class="line">    <span class="attr">"uglifyjs-webpack-plugin"</span>: <span class="string">"^0.4.6"</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="webpack-config-js"><a href="#webpack-config-js" class="headerlink" title="webpack.config.js"></a>webpack.config.js</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</div><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"><span class="keyword">var</span> ExtractTextPlugin = <span class="built_in">require</span>(<span class="string">'extract-text-webpack-plugin'</span>);</div><div class="line"><span class="keyword">var</span> entry = <span class="string">'./src/js/index.js'</span>;  <span class="comment">// modify the index.js</span></div><div class="line"><span class="comment">// var entry = require('./webpack.config.entry');</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> BUILD_DIR = path.resolve(__dirname, <span class="string">'dist/'</span>);</div><div class="line"><span class="keyword">var</span> APP_DIR = path.resolve(__dirname, <span class="string">'src/js'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> config = &#123;</div><div class="line">  entry: entry,</div><div class="line">  output: &#123;</div><div class="line">    path: path.resolve(__dirname, <span class="string">'./dist/'</span>),</div><div class="line">    filename: <span class="string">'js/index.js'</span>  <span class="comment">// modify the index.js</span></div><div class="line">    <span class="comment">// filename: 'js/[name].js'</span></div><div class="line">  &#125;,</div><div class="line">  resolve: &#123;</div><div class="line">    extensions: [<span class="string">'*'</span>, <span class="string">'.js'</span>]</div><div class="line">  &#125;,</div><div class="line">  <span class="built_in">module</span>: &#123;</div><div class="line">    loaders: [&#123;</div><div class="line">      test: <span class="regexp">/\.js?$/</span>,</div><div class="line">      loader: <span class="string">'babel-loader'</span>,</div><div class="line">      include: APP_DIR,</div><div class="line">      query: &#123;</div><div class="line">        presets: [<span class="string">'es2015'</span>]</div><div class="line">      &#125;</div><div class="line">      <span class="comment">// exclude: /node_modules/</span></div><div class="line">    &#125;, &#123;</div><div class="line">      test: <span class="regexp">/\.css$/</span>,</div><div class="line">      loader: ExtractTextPlugin.extract(&#123;</div><div class="line">        fallback: <span class="string">'style-loader'</span>,</div><div class="line">        use: <span class="string">'css-loader'</span>,</div><div class="line">        publicPath:<span class="string">'../'</span></div><div class="line">      &#125;)</div><div class="line">    &#125;, &#123;</div><div class="line">      test: <span class="regexp">/\.scss$/</span>,</div><div class="line">      loader: ExtractTextPlugin.extract(&#123;</div><div class="line">        fallback: <span class="string">'style-loader'</span>,</div><div class="line">        use: <span class="string">'css-loader!sass-loader!autoprefixer-loader'</span>,</div><div class="line">        publicPath:<span class="string">'../'</span></div><div class="line">      &#125;)</div><div class="line">    &#125;, &#123;</div><div class="line">      test: <span class="regexp">/\.(svg|png|jpe?g)(\?\S*)?$/</span>,</div><div class="line">      loader: <span class="string">'file-loader?name=images/[name].[ext]'</span>,</div><div class="line">    &#125;, &#123;</div><div class="line">      test: <span class="regexp">/\.(eot|svg|ttf|woff|woff2)$/</span>,</div><div class="line">      loader: <span class="string">'file-loader?name=fonts/[name].[ext]'</span>,</div><div class="line">    &#125;]</div><div class="line">  &#125;,</div><div class="line">  plugins: [</div><div class="line">    <span class="keyword">new</span> ExtractTextPlugin(<span class="string">"css/style.css"</span>)  <span class="comment">// modify the style.css</span></div><div class="line">    <span class="comment">// new ExtractTextPlugin("css/[name].css")</span></div><div class="line">  ]</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = config;</div></pre></td></tr></table></figure>
+<h2 id="webpack-config-entry-js"><a href="#webpack-config-entry-js" class="headerlink" title="webpack.config.entry.js"></a>webpack.config.entry.js</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">  <span class="string">'index'</span>: path.resolve(__dirname, <span class="string">'./src/js/index.js'</span>),</div><div class="line">  <span class="comment">// ...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="pro-js"><a href="#pro-js" class="headerlink" title="pro.js"></a>pro.js</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">require</span>(<span class="string">'./../scss/style.scss'</span>);  <span class="comment">// modify the style.scss</span></div><div class="line"></div><div class="line"><span class="keyword">import</span> &#123; loading &#125; <span class="keyword">from</span> <span class="string">'./module/loading'</span>;</div><div class="line"></div><div class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">  <span class="comment">// loading</span></div><div class="line">  loading();</div><div class="line"></div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h2 id="loading-js"><a href="#loading-js" class="headerlink" title="loading.js"></a>loading.js</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="keyword">let</span> loading = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line"></div><div class="line">  (<span class="function"><span class="keyword">function</span> (<span class="params">$</span>) </span>&#123;</div><div class="line"><span class="meta">    'use strict'</span>;</div><div class="line"></div><div class="line">    <span class="keyword">let</span> loadingHTML = <span class="string">`&lt;div class="loading"&gt;&lt;/div&gt;`</span>;</div><div class="line"></div><div class="line">    $(<span class="built_in">document</span>).ajaxStart(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      $(<span class="string">'body'</span>).append(loadingHTML);</div><div class="line">    &#125;)</div><div class="line"></div><div class="line">    $(<span class="built_in">document</span>).ajaxStop(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">      $(<span class="string">'.loading'</span>).remove();</div><div class="line">    &#125;)</div><div class="line">    </div><div class="line">  &#125;)(jQuery);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="/2018/05/28/git-ignore/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1479,131 +1673,6 @@ mv dir1 dir2                      # 将文件或目录重新命名,或者将文�
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="/2017/03/21/git-memo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AdiHuang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AdiHuang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/03/21/git-memo/" itemprop="url">Git使用摘要</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-21T11:42:26+08:00">
-                2017-03-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Git是一个“分布式版本管理工具”，简单的理解版本管理工具：大家在写东西的时候都用过“回撤”这个功能，但是回撤只能回撤几步，假如想要找回我三天之前的修改，光用“回撤”是找不回来的。而“版本管理工具”能记录每次的修改，只要提交到版本仓库，你就可以找到之前任何时刻的状态（文本状态）。</p>
-<p>下面的内容就是列举了常用的Git命令和一些小技巧，可以通过”页面内查找”的方式进行快速查询：<code>Ctrl/Command+f</code>。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/03/21/git-memo/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1658,7 +1727,7 @@ mv dir1 dir2                      # 将文件或目录重新命名,或者将文�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">59</span>
+                  <span class="site-state-item-count">60</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1671,7 +1740,7 @@ mv dir1 dir2                      # 将文件或目录重新命名,或者将文�
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
