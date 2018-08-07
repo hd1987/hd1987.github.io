@@ -339,9 +339,9 @@
 
       
         <p><code>git clone</code> 默认会下载项目的完整历史版本，如果你只关心最新版的代码，而不关心之前的历史信息，可以使用 git 的浅复制功能：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git clone --depth=1 git@github.com:hd1987/hd1987.github.io.git</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone --depth=1 git@github.com:hd1987/hd1987.github.io.git</span><br></pre></td></tr></table></figure>
 <p><code>--depth=1</code> 表示只下载最近一次的版本，使用浅复制可以大大减少下载的数据量，如果之后又想获取完整历史信息，可以使用下面的命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ git fetch --unshallow</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git fetch --unshallow</span><br></pre></td></tr></table></figure>
 
       
     </div>
