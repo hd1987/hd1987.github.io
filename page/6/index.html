@@ -270,6 +270,126 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="/2016/03/25/js-datetime/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AdiHuang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AdiHuang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/03/25/js-datetime/" itemprop="url">js显示本地时间年月日</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-25T22:54:12+08:00">
+                2016-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;script language=<span class="string">"JavaScript"</span> type=<span class="string">"text/JavaScript"</span>&gt;</span><br><span class="line"><span class="keyword">var</span> day=<span class="string">""</span>;</span><br><span class="line"><span class="keyword">var</span> month=<span class="string">""</span>;</span><br><span class="line"><span class="keyword">var</span> ampm=<span class="string">""</span>;</span><br><span class="line"><span class="keyword">var</span> ampmhour=<span class="string">""</span>;</span><br><span class="line"><span class="keyword">var</span> myweekday=<span class="string">""</span>;</span><br><span class="line"><span class="keyword">var</span> year=<span class="string">""</span>;</span><br><span class="line">mydate=<span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">myweekday=mydate.getDay();</span><br><span class="line">mymonth=mydate.getMonth()+<span class="number">1</span>;</span><br><span class="line">myday= mydate.getDate();</span><br><span class="line">myyear= mydate.getYear();</span><br><span class="line">year=(myyear &gt; <span class="number">200</span>) ? myyear : <span class="number">1900</span> + myyear;</span><br><span class="line"><span class="keyword">if</span>(myweekday == <span class="number">0</span>)</span><br><span class="line">weekday=<span class="string">" 星期日 "</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(myweekday == <span class="number">1</span>)</span><br><span class="line">weekday=<span class="string">" 星期一 "</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(myweekday == <span class="number">2</span>)</span><br><span class="line">weekday=<span class="string">" 星期二 "</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(myweekday == <span class="number">3</span>)</span><br><span class="line">weekday=<span class="string">" 星期三 "</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(myweekday == <span class="number">4</span>)</span><br><span class="line">weekday=<span class="string">" 星期四 "</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(myweekday == <span class="number">5</span>)</span><br><span class="line">weekday=<span class="string">" 星期五 "</span>;</span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span>(myweekday == <span class="number">6</span>)</span><br><span class="line">weekday=<span class="string">" 星期六 "</span>;</span><br><span class="line"><span class="built_in">document</span>.write(year+<span class="string">"年"</span>+mymonth+<span class="string">"月"</span>+myday+<span class="string">"日 "</span>+weekday);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="/2016/03/25/css-user-select/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1349,131 +1469,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="/2016/03/23/markdown-sumup/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AdiHuang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AdiHuang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/03/23/markdown-sumup/" itemprop="url">markdown常用基本语法概括</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-23T21:23:51+08:00">
-                2016-03-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>1、 标题设置（让字体变大，和word的标题意思一样）<br>在Markdown当中设置标题，有两种方式：<br>第一种：通过在文字下方添加“=”和“-”，他们分别表示一级标题和二级标题。<br>第二种：在文字开头加上 “#”，通过“#”数量表示几级标题。（一共只有1~6级标题，1级标题字体最大）</p>
-<p>2、块注释（blockquote）<br>通过在文字开头添加“&gt;”表示块注释。（当&gt;和文字之间添加五个blank时，块注释的文字会有变化。）</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/03/23/markdown-sumup/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1528,7 +1523,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">64</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
