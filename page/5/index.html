@@ -1351,7 +1351,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="/2016/03/25/js-history/">
+    <link itemprop="mainEntityOfPage" href="/2016/03/25/js-value-chain/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="AdiHuang">
@@ -1370,7 +1370,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2016/03/25/js-history/" itemprop="url">JS历史返回代码</a></h1>
+                <a class="post-title-link" href="/2016/03/25/js-value-chain/" itemprop="url">js链式取值（函数解析字符串）</a></h1>
         
 
         <div class="post-meta">
@@ -1382,7 +1382,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-25T22:56:26+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-03-25T22:58:34+08:00">
                 2016-03-25
               </time>
             
@@ -1422,8 +1422,18 @@
       
         
           
-            <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">onclick=<span class="string">"javascript:history.go(-1);"</span></span><br></pre></td></tr></table></figure>
-
+            <p>开发中，链式取值是非常正常的操作，如：<br><code>res.data.goods.list[0].price</code><br>有时候会出现错误：<br><code>Uncaught TypeError: Cannot read property &#39;goods&#39; of undefined</code></p>
+<h2 id="通过函数解析字符串验证"><a href="#通过函数解析字符串验证" class="headerlink" title="通过函数解析字符串验证"></a>通过函数解析字符串验证</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params">obj, props, def</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> ((obj == <span class="literal">null</span>) || obj == <span class="literal">null</span> || <span class="keyword">typeof</span> props !== <span class="string">'string'</span>) <span class="keyword">return</span> def;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> temp = props.split(<span class="string">'.'</span>);</span><br><span class="line">  <span class="keyword">const</span> fieldArr = [].concat(temp);</span><br><span class="line"></span><br><span class="line">  temp.forEach(<span class="function">(<span class="params">e, i</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="regexp">/^(\w+)\[(\w+)\]$/</span>.test(e)) &#123;</span><br><span class="line">      <span class="keyword">const</span> matchs = e.match(<span class="regexp">/^(\w+)\[(\w+)\]$/</span>);</span><br><span class="line">      <span class="keyword">const</span> field1 = matchs[<span class="number">1</span>];</span><br><span class="line">      <span class="keyword">const</span> field2 = matchs[<span class="number">2</span>];</span><br><span class="line">      <span class="keyword">const</span> index = fieldArr.indexOf(e);</span><br><span class="line">      fieldArr.splice(index, <span class="number">1</span>, field1, field2);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> fieldArr.reduce(<span class="function">(<span class="params">pre, cur</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> target = pre[cur] || def;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (target <span class="keyword">instanceof</span> <span class="built_in">Array</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> [].concat(target);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (target <span class="keyword">instanceof</span> <span class="built_in">Object</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">Object</span>.assign(&#123;&#125;, target)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> target;</span><br><span class="line">  &#125;, obj)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用:</p>
+<pre><code>var c = {
+  a: {
+    b: [1, 2, 3]
+  }
+}
+get(c, &apos;a.b&apos;) // [1,2,3]
+get(c, &apos;a.b[1]&apos;) // 2
+get(c, &apos;a.d&apos;, 12) // 12
+</code></pre>
           
         
       
@@ -1512,7 +1522,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">65</span>
+                  <span class="site-state-item-count">66</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
