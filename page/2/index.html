@@ -270,6 +270,130 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="/2018/01/19/js-fileReader/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AdiHuang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AdiHuang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/19/js-fileReader/" itemprop="url">图片上传预览, 通过file标签和js的FileReader接口</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-19T17:02:43+08:00">
+                2018-01-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>用html的file标签就能实现图片上传前预览，就是通过file标签和js的FileReader接口，把选择的图片文件调用readAsDataURL方法，把图片数据转成base64字符串形式显示在页面上。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/01/19/js-fileReader/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="/2017/08/11/terminal-shortcuts/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1457,129 +1581,6 @@ mv dir1 dir2                      # 将文件或目录重新命名,或者将文�
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="/2016/10/31/js-window-width-height/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AdiHuang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AdiHuang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/10/31/js-window-width-height/" itemprop="url">Javascript、Jquery获取浏览器和屏幕各种高度宽度</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-31T13:44:11+08:00">
-                2016-10-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Javascript:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.body.clientWidth        <span class="comment">//网页可见区域宽(body)</span></span><br><span class="line"><span class="built_in">document</span>.body.clientHeight       <span class="comment">//网页可见区域高(body)</span></span><br><span class="line"><span class="built_in">document</span>.body.offsetWidth        <span class="comment">//网页可见区域宽(body)，包括border、margin等</span></span><br><span class="line"><span class="built_in">document</span>.body.offsetHeight       <span class="comment">//网页可见区域宽(body)，包括border、margin等</span></span><br><span class="line"><span class="built_in">document</span>.body.scrollWidth        <span class="comment">//网页正文全文宽，包括有滚动条时的未见区域</span></span><br><span class="line"><span class="built_in">document</span>.body.scrollHeight       <span class="comment">//网页正文全文高，包括有滚动条时的未见区域</span></span><br><span class="line"><span class="built_in">document</span>.body.scrollTop          <span class="comment">//网页被卷去的Top(滚动条)</span></span><br><span class="line"><span class="built_in">document</span>.body.scrollLeft         <span class="comment">//网页被卷去的Left(滚动条)</span></span><br><span class="line"><span class="built_in">window</span>.screenTop                 <span class="comment">//浏览器距离Top</span></span><br><span class="line"><span class="built_in">window</span>.screenLeft                <span class="comment">//浏览器距离Left</span></span><br><span class="line"><span class="built_in">window</span>.screen.height             <span class="comment">//屏幕分辨率的高</span></span><br><span class="line"><span class="built_in">window</span>.screen.width              <span class="comment">//屏幕分辨率的宽</span></span><br><span class="line"><span class="built_in">window</span>.screen.availHeight        <span class="comment">//屏幕可用工作区的高</span></span><br><span class="line"><span class="built_in">window</span>.screen.availWidth         <span class="comment">//屏幕可用工作区的宽</span></span><br></pre></td></tr></table></figure>
-<p>Jquery:</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="built_in">window</span>).height()                 <span class="comment">//浏览器当前窗口可视区域高度</span></span><br><span class="line">$(<span class="built_in">document</span>).height()               <span class="comment">//浏览器当前窗口文档的高度</span></span><br><span class="line">$(<span class="built_in">document</span>.body).height()          <span class="comment">//浏览器当前窗口文档body的高度</span></span><br><span class="line">$(<span class="built_in">document</span>.body).outerHeight(<span class="literal">true</span>) <span class="comment">//浏览器当前窗口文档body的总高度 包括border padding margin</span></span><br><span class="line">$(<span class="built_in">window</span>).width()                  <span class="comment">//浏览器当前窗口可视区域宽度</span></span><br><span class="line">$(<span class="built_in">document</span>).width()                <span class="comment">//浏览器当前窗口文档对象宽度</span></span><br><span class="line">$(<span class="built_in">document</span>.body).width()           <span class="comment">//浏览器当前窗口文档body的宽度</span></span><br><span class="line">$(<span class="built_in">document</span>.body).outerWidth(<span class="literal">true</span>)  <span class="comment">//浏览器当前窗口文档body的总宽度 包括border padding margin</span></span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1634,7 +1635,7 @@ mv dir1 dir2                      # 将文件或目录重新命名,或者将文�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">67</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
