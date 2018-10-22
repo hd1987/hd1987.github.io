@@ -270,6 +270,126 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="/2016/12/06/css-sass-border/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AdiHuang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AdiHuang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2016/12/06/css-sass-border/" itemprop="url">sass - Retinal屏border显示1px</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-06T15:55:26+08:00">
+                2016-12-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">mixin</span> border($top, $right, $bottom, $left, $color:#f00) &#123;</span><br><span class="line">  <span class="selector-tag">content</span>: " ";</span><br><span class="line">  <span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;</span><br><span class="line">  top: $top;</span><br><span class="line">  right: $right;</span><br><span class="line">  bottom: $bottom;</span><br><span class="line">  left: $left;</span><br><span class="line">  color: $color;</span><br><span class="line">  $position: '';</span><br><span class="line">  $transform-origin: '';</span><br><span class="line">  $scale: '';</span><br><span class="line">  @<span class="keyword">if</span> $top == <span class="string">'auto'</span> or $bottom == <span class="string">'auto'</span> &#123;</span><br><span class="line">    <span class="selector-tag">height</span>: 1<span class="selector-tag">px</span>;</span><br><span class="line">    $scale: 1, .5;</span><br><span class="line">  &#125;</span><br><span class="line">  @<span class="keyword">else</span> if $left == <span class="string">'auto'</span> or $right == <span class="string">'auto'</span> &#123;</span><br><span class="line">    <span class="selector-tag">width</span>: 1<span class="selector-tag">px</span>;</span><br><span class="line">    $scale: .5, 1;</span><br><span class="line">  &#125;</span><br><span class="line">  @<span class="keyword">if</span> $top == <span class="string">'auto'</span> &#123;</span><br><span class="line">    $position: bottom;</span><br><span class="line">    $transform-origin: 0 100%;</span><br><span class="line">  &#125;</span><br><span class="line">  @<span class="keyword">else</span> if $right == <span class="string">'auto'</span> &#123;</span><br><span class="line">    $position: left;</span><br><span class="line">    $transform-origin: 0 0;</span><br><span class="line">  &#125;</span><br><span class="line">  @<span class="keyword">else</span> if $bottom == <span class="string">'auto'</span> &#123;</span><br><span class="line">    $position: top;</span><br><span class="line">    $transform-origin: 0 0;</span><br><span class="line">  &#125;</span><br><span class="line">  @<span class="keyword">else</span> if $left == <span class="string">'auto'</span> &#123;</span><br><span class="line">    $position: right;</span><br><span class="line">    $transform-origin: 100% 0;</span><br><span class="line">  &#125;</span><br><span class="line">  border-#&#123;$position&#125; : 1px solid $color;</span><br><span class="line">  -webkit-transform-origin: $transform-origin;</span><br><span class="line">  transform-origin: $transform-origin;</span><br><span class="line">  -webkit-transform: scale($scale);</span><br><span class="line">  transform: scale($scale);</span><br><span class="line">  <span class="selector-tag">z-index</span>: 1;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.demo</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  &amp;:before &#123;</span><br><span class="line">    @include border(0, 0, auto, 0, #666);  // top, right, bottom, left, color</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="/2016/10/31/js-window-width-height/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1385,131 +1505,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="/2016/07/18/mysql-navicat-mysql/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="AdiHuang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="AdiHuang">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/07/18/mysql-navicat-mysql/" itemprop="url">mac下 navicat 如何连接本地 mysql（mamp pro 服务器）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-18T13:54:00+08:00">
-                2016-07-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li>打开mac 下的 navicat</li>
-<li>建立相应的连接，点击设置连接属性。</li>
-<li>点击advanced</li>
-<li>use socket ,打勾。输入/Applications/MAMP/tmp/mysql/mysql.sock</li>
-</ol>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1564,7 +1559,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">67</span>
+                  <span class="site-state-item-count">68</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
