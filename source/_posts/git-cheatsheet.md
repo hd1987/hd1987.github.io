@@ -4,18 +4,18 @@ date: 2020-05-25 13:35:16
 tags: git
 ---
 
-## 配置
+### 配置
 ```sh
 git config --global "Your Name"
 git config --global "Email Address"
 ```
 
-## 初始化
+### 初始化
 ```sh
 git init
 ```
 
-## 提交修改
+### 提交修改
 ```sh
 git add <file>
 git add -u 提交work directory中所有已track的文件至staging area
@@ -26,7 +26,7 @@ git commit --amend --author "user_name <user_email>" 修改最近提交用户名
 
 <!-- more -->
 
-## 查看状态、比对
+### 查看状态、比对
 ```sh
 git status
 git status -s 文件状态缩略信息, 常见 A:新增; M:文件变更; ?:未track; D:删除
@@ -36,7 +36,7 @@ git diff --check <file>     检查是否有空白错误(regex:' \{1,\}$')
 git diff --cached <file>    查看已add的内容(绿M)
 ```
 
-## 查看历史版本、历史操作
+### 查看历史版本、历史操作
 ```sh
 git log
 git reflog
@@ -66,14 +66,14 @@ git log --since=1.days      过去一天的提交(下班的时候可以看看我
 git log --since="1 weeks 2 days 3 hours 40 minutes 50 seconds ago" 过去1周2天3小时40分50秒之内的提交
 ```
 
-## 版本回退、前进
+### 版本回退、前进
 ```sh
 git reset --hard HEAD^		回退到上1版本
 git reset --hard HEAD~5		回退到上5个版本
 git reset --hard id		回退到指定版本
 ```
 
-## 撤销修改
+### 撤销修改
 ```sh
 git checkout -- <file>		撤销修改：误修改工作区文件，未git add/commit
 git restore <file>		撤销修改：误修改工作区文件，未git add/commit
@@ -81,14 +81,14 @@ git reset HEAD <file>		撤销git add：误将文件加入暂存区（git add）�
 git reset --hard HEAD^		撤销git commit：误将文件提交（一旦提交，只能通过版本回退进行撤销）
 ```
 
-## 删除与恢复
+### 删除与恢复
 ```sh
 git rm/add <file>
 git commit -m "remove <file>"	删除版本库中的<file>：删除工作区文件后，继续删除版本库中相应的文件
 git checkout -- <file>		根据版本库中的<file>恢复工作区<file>
 ```
 
-## 关联GitHub远程仓库（本地到远程）
+### 关联GitHub远程仓库（本地到远程）
 ```sh
 git remote add origin <remote address>	在本地工作区目录下按照 GitHub 提示进行关联
 git remote rm origin			解除错误关联
@@ -99,12 +99,12 @@ git push origin master			以后每次将本地仓库推送至远程仓库（每�
 	https://github.com/<username>/<repository>.git
 ```
 
-## 克隆GitHub远程仓库（远程到本地）
+### 克隆GitHub远程仓库（远程到本地）
 ```sh
 git clone <remote address>	git协议速度更快但通常公司内网不允许，https协议速度慢
 ```
 
-## 分支管理：创建、切换、查看、合并、删除
+### 分支管理：创建、切换、查看、合并、删除
 ```sh
 git branch <branch name>	创建<branch name>分支
 git checkout <branch name>	切换至<branch name>分支
@@ -116,19 +116,19 @@ git merge <branch name>		合并<branch name>到当前分支（通常在master分
 git branch -d <branch name>	删除分支
 ```
 
-## 解决合并冲突
+### 解决合并冲突
 ```sh
 合并时报错“分支发生冲突”，首先vim相应文件，修改冲突位置，然后按照git add/commit重新提交，最后删除多余分支即可。
 git log --graph --pretty=oneline --abbrev-commit
 git log --graph
 ```
 
-## 分支管理：合并后删除分支也在 log 中保留分支记录
+### 分支管理：合并后删除分支也在 log 中保留分支记录
 ```sh
 git merge --no-ff -m "descriptions" <branch name>
 ```
 
-## 开发流程：
+### 开发流程：
 ```sh
 master分支		发布稳定版本
 dev分支			发布开发版本
@@ -136,7 +136,7 @@ dev分支			发布开发版本
 ```
 
 
-## Bug分支管理（建立单独分支进行bug修复）
+### Bug分支管理（建立单独分支进行bug修复）
 ```sh
 软件开发中，bug就像家常便饭一样。有了bug就需要修复，在Git中，由于分支是如此的强大，所以，每个bug都可以通过一个新的临时分支来修复，修复后，合并分支，然后将临时分支删除。
 git stash			保存当前工作现场（在dev未完成开发，但master有bug需要修复）
@@ -147,13 +147,13 @@ git stash drop stash@{#}	删除指定工作现场
 git cherry-pick <id>		在master修复好bug后，在dev复制一遍bug修复流程
 ```
 
-## Feature分支管理（建立单独分支添加新功能）
+### Feature分支管理（建立单独分支添加新功能）
 ```sh
 软件开发中，总有无穷无尽的新的功能要不断添加进来。添加一个新功能时，你肯定不希望因为一些实验性质的代码，把主分支搞乱了，所以，每添加一个新功能，最好新建一个feature分支，在上面开发，完成后，合并，最后，删除该feature分支。
 git branch -D <branch name>	强制删除分支（丢弃未合并分支）
 ```
 
-## 协作与分支推送
+### 协作与分支推送
 ```sh
 User 1:
 git remote [-v]						查看远程库信息（-v 查看详细信息）
@@ -170,7 +170,7 @@ git pull						拉取远程文件（并解决冲突）
 git commit/push						重新提交并推送
 ```
 
-## 标签管理（常用于版本管理）：查看、创建、操作
+### 标签管理（常用于版本管理）：查看、创建、操作
 ```sh
 git tag								查看标签
 git show <tag name>						查看指定标签
@@ -184,7 +184,7 @@ git push origin --tags						推送所有本地标签到远程
 git push origin :refs/tags/<tag name>				删除远程标签（先删除本地标签）
 ```
 
-## rebase(换基)
+### rebase(换基)
 ```sh
 # rebase 在日常中常用功能主要是两个, 多人协同开发定期rebase master以及压缩某分支多个commit
 git rebase master 常见于多人开发, 每个开发人员从master checkout出自己的分支, 开发一段时间后提交至master之前最好rebase一下, 防止冲突,就算真有冲突在本地解决好过强制提交, 开发流程中尽量保证master的干净整洁
@@ -193,7 +193,7 @@ git rebase --abort # rebase过程中发生错误, 可以利用该命令终止整
 git rebase --continue # rebase过程中发生冲突, 在解决冲突后可以利用该命令进行后续过程
 ```
 
-## 打patch(补丁)
+### 打patch(补丁)
 ```sh
 # 生成diff patch文件(git可以识别diff文件)
 git <branch> log -n -p > diff.patch # 生成某分支过去n个commit的文件diff信息至单个diff文件
@@ -220,30 +220,30 @@ git am --abort                              #终止整个打patch的过程, 类�
 git am --resolved                           #解决冲突后, 可以执行该命令进行后续的patch, 类似rebase --continue
 ```
 
-## 使用GitHub
+### 使用GitHub
 ```sh
 fork --> clone --> add/commit/push --> pull request
 ```
 
-## 其他配置
+### 其他配置
 ```sh
 git config --global color.ui true	显示颜色
 ```
 
-## 配置.gitignore文件
+### 配置.gitignore文件
 ```sh
 /<dir name>/			忽略文件夹
 *.zip				忽略.zip文件
 /<dir name>/<file name>		忽略指定文件
 ```
 
-## 文件.gitignore生效后
+### 文件.gitignore生效后
 ```sh
 git add -f <file>		强制添加
 git check-ignore -v <file>	查看生效规则
 ```
 
-## 配置别名
+### 配置别名
 ```sh
 git config [--global] alias.<alias> '<original command>'	为所有工作区/当前工作区配置别名
 .git/config			当前工作区的配置文件
