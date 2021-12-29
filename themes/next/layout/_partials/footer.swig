@@ -6,7 +6,7 @@
     <i class="fa fa-{{ theme.footer.icon }}"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">{{ theme.footer.copyright || config.author }}</span>
-  <a href="http://www.beian.miit.gov.cn" style="font-size: 13px;">浙ICP备13028461号-5</a>
+  <a href="https://beian.miit.gov.cn/" target="_blank" style="font-size: 13px;">浙ICP备13028461号-5</a>
 
   {% if theme.post_wordcount.totalcount %}
     <span class="post-meta-divider">|</span>
