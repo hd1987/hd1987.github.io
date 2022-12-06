@@ -2,6 +2,7 @@
 title: JS Standard 代码规范
 date: 2018-08-08 21:50:56
 tags: js
+toc: true
 ---
 
 这是 [JavaScript standard](https://github.com/standard/standard) 代码规范的全文。

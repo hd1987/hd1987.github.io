@@ -2,6 +2,7 @@
 title: git cheatsheet 中文速查表 (2019/09/16)
 date: 2020-05-25 13:35:16
 tags: git
+toc: true
 ---
 
 ### 配置
@@ -9,6 +10,8 @@ tags: git
 git config --global "Your Name"
 git config --global "Email Address"
 ```
+
+<!-- more -->
 
 ### 初始化
 ```sh
@@ -23,8 +26,6 @@ git commit -m "descriptions"
 git commit --amend 对最近一次的提交做内容修改
 git commit --amend --author "user_name <user_email>" 修改最近提交用户名和邮箱
 ```
-
-<!-- more -->
 
 ### 查看状态、比对
 ```sh

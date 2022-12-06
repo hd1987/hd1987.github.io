@@ -2,16 +2,17 @@
 title: 文字超出范围以省略号表示 
 date: 2016-03-24 22:30:54
 tags: css
+toc: true
 ---
 
-一、单行溢出，超出部分显示...或者截取。前提必须有宽度。
+### 一、单行溢出，超出部分显示...或者截取。前提必须有宽度。
 ``` css
 p { width:100px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
 ```
 
 <!--more-->
 
-二、多行溢出
+### 二、多行溢出
 ``` css
 p { display:-webkit-box; overflow:hidden; text-overflow:ellipsis; -webkit-line-clamp:2; -webkit-box-orient:vertical;}
 ```
@@ -23,7 +24,7 @@ p { display:-webkit-box; overflow:hidden; text-overflow:ellipsis; -webkit-line-c
 2.display: -webkit-box; 必须结合的属性 ，将对象作为弹性伸缩盒子模型显示 。
 3.-webkit-box-orient 必须结合的属性 ，设置或检索伸缩盒对象的子元素的排列方式 。
 
-三、移动端
+### 三、移动端
 ``` css
 p{position: relative; line-height: 20px; max-height: 40px;overflow: hidden;}   
 p::after{content: "..."; position: absolute; bottombottom: 0; rightright: 0; padding-left: 40px;   

@@ -2,11 +2,14 @@
 title: Regular Expressions 正则表达式方法
 date: 2022-02-05 15:35:23
 tags: regex
+toc: true
 ---
 
 ## RegExp
 
 `RegExp`是正则表达式的构造函数。
+
+<!-- more -->
 
 使用构造函数创建正则表达式有多种写法：
 
@@ -20,8 +23,6 @@ new RegExp(/abc/gi);
 new RegExp(/abc/m, 'gi');
 // /abc/gi
 ```
-
-<!-- more -->
 
 它接受两个参数：第一个参数是匹配模式，可以是字符串也可以是正则表达式；第二个参数是修饰符。
 

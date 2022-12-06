@@ -2,6 +2,7 @@
 title: linux常用命令
 date: 2017-06-12 11:05:55
 tags: [linux, cli]
+toc: true
 ---
 
 ## 文件、目录类

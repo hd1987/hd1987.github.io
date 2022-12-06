@@ -2,15 +2,16 @@
 title: 移动端wap用到的头部信息代码meta
 date: 2016-03-22 22:57:59
 tags: [html, meta]
+toc: true
 ---
 
-1、禁止页面缩放
+### 禁止页面缩放
 
 ``` html
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
 ```
 
-2、禁止数字拨号功能
+### 禁止数字拨号功能
 
 ``` html
 <meta name="format-detection" content="telephone=no">
@@ -19,25 +20,25 @@ tags: [html, meta]
 
 <!--more-->
 
-3、全屏模式运行
+### 全屏模式运行
 
 ``` html
 <meta name="apple-mobile-web-app-capable" content="yes">
 ```
 
-4、顶部状态栏背景色（需全屏运行）
+### 顶部状态栏背景色（需全屏运行）
 
 ``` html
 <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 ```
 
-5、wap设置缓存
+### wap设置缓存
 
 ``` html
 <meta http-equiv="Cache-Control" content="no-cache" />
 ```
 
-6、桌面图标
+### 桌面图标
 
 ``` html
 <link rel="apple-touch-icon" href="touch-icon-iphone.png" />
@@ -46,7 +47,7 @@ tags: [html, meta]
 <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png" />
 ```
 
-7、启动画面
+### 启动画面
 
 ``` html
 <link rel="apple-touch-startup-image" href="start.png"/>  

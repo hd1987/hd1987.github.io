@@ -2,6 +2,7 @@
 title: Git 忽略文件不加入版本控制
 date: 2018-05-28 14:27:59
 tags: git
+toc: true
 ---
 
 ## .gitignore

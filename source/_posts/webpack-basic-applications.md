@@ -2,6 +2,7 @@
 title: webpack4 基本设置应用示例 (Nodejs -v10)
 date: 2018-05-31 11:40:24
 tags: [npm, webpack]
+toc: true
 ---
 
 ## 目录结构

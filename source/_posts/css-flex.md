@@ -2,6 +2,7 @@
 title: css3 flex弹性布局摘要
 date: 2018-08-07 11:13:17
 tags: css
+toc: true
 ---
 
 Flex是Flexible Box的缩写，意为”弹性布局”，用来为盒状模型提供最大的灵活性

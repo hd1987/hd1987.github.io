@@ -2,6 +2,7 @@
 title: hexo常用命令笔记
 date: 2016-04-14 22:15:26
 tags: hexo
+toc: true
 ---
 
 ### 简写

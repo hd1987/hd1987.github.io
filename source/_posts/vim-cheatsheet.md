@@ -2,9 +2,11 @@
 title: vim cheatsheet
 date: 2020-08-13 11:00:00
 tags: vim
+toc: true
 ---
 
-### 光标移动
+## 光标移动
+<!-- more -->
 ```sh
 h                   光标左移，同 <Left> 键
 j                   光标下移，同 <Down> 键
@@ -55,9 +57,7 @@ gj                  光标下移一行（忽略自动换行）
 gk                  光标上移一行（忽略自动换行）
 ```
 
-<!-- more -->
-
-### 插入模式：进入退出
+## 插入模式：进入退出
 ```sh
 i                   在光标处进入插入模式
 I                   在行首进入插入模式
@@ -70,7 +70,7 @@ gi                  进入到上一次插入模式的位置
 CTRL-[              退出插入模式（同 ESC 等价，但更顺手）
 ```
 
-### INSERT MODE - 由 i, I, a, A, o, O 等命令进入插入模式后
+## INSERT MODE - 由 i, I, a, A, o, O 等命令进入插入模式后
 ```sh
 <Up>                光标向上移动
 <Down>              光标向下移动
@@ -106,7 +106,7 @@ CTRL-V U12345678    插入 16进制 unicode 字符（八数字）
 CTRL-K {ch1} {ch2}  插入 digraph（见 :h digraph），快速输入日文或符号等
 ```
 
-### 文本编辑
+## 文本编辑
 ```sh
 r                   替换当前字符
 R                   进入替换模式，直至 ESC 离开
@@ -178,7 +178,7 @@ CTRL-A              增加数字
 CTRL-X              减少数字
 ```
 
-### 复制粘贴
+## 复制粘贴
 ```sh
 p                   粘贴到光标后
 P                   粘贴到光标前
@@ -220,7 +220,7 @@ ddp                 交换两行内容：先删除当前行复制到寄存器，
 "*[command]         使用[command]复制内容到系统剪贴板（需要vim版本有clipboard支持）
 ```
 
-### 文本对象 - c,d,v,y 等命令后接文本对象，一般为：<范围 i/a><类型>
+## 文本对象 - c,d,v,y 等命令后接文本对象，一般为：<范围 i/a><类型>
 ```sh
 $                   到行末
 0                   到行首
@@ -252,7 +252,7 @@ a"                  双引号内（包含双引号本身）
 2t)                 到第二个小括号前
 ```
 
-### 查找替换
+## 查找替换
 ```sh
 /pattern            从光标处向文件尾搜索 pattern
 ?pattern            从光标处向文件头搜索 pattern
@@ -268,7 +268,7 @@ N                   向相反方向执行上一次搜索
 :%s/\r//g           删除 DOS 换行符 ^M
 ```
 
-### VISUAL MODE - 由 v, V, CTRL-V 进入的可视模式
+## VISUAL MODE - 由 v, V, CTRL-V 进入的可视模式
 ```sh
 >                   增加缩进
 <                   减少缩进
@@ -286,7 +286,7 @@ g CTRL-G            显示所选择区域的统计信息
 <Esc>               退出可视模式
 ```
 
-### 位置跳转
+## 位置跳转
 ```sh
 CTRL-O              跳转到上一个位置
 CTRL-I              跳转到下一个位置
@@ -313,7 +313,7 @@ gf                  打开名称为光标下文件名的文件
 '.                  回到上次编辑的位置
 ```
 
-### 文件操作
+## 文件操作
 ```sh
 :w                  保存文件
 :w <filename>       按名称保存文件
@@ -333,7 +333,7 @@ gf                  打开名称为光标下文件名的文件
 :tabnew             在新的标签页中编辑新文件
 ```
 
-### 已打开文件操作
+## 已打开文件操作
 ```sh
 :ls                 查案缓存列表
 :bn                 切换到下一个缓存
@@ -347,7 +347,7 @@ gf                  打开名称为光标下文件名的文件
 n CTRL-^            切换缓存，先输入数字的缓存编号，再按 CTRL + 6
 ```
 
-### 窗口操作
+## 窗口操作
 ```sh
 :sp <filename>      上下切分窗口并在新窗口打开文件 filename
 :vs <filename>      左右切分窗口并在新窗口打开文件 filename
@@ -382,7 +382,7 @@ CTRL-W _            纵向最大化当前窗口
 CTRL-W |            横向最大化当前窗口
 ```
 
-### 标签页
+## 标签页
 ```sh
 :tabs               显示所有标签页
 :tabe <filename>    在新标签页中打开文件 filename
@@ -404,7 +404,7 @@ gt                  下一个标签页
 gT                  上一个标签页
 ```
 
-### 书签
+## 书签
 ```sh
 :marks              显示所有书签
 ma                  保存当前位置到书签 a ，书签名小写字母为文件内，大写全局
@@ -418,7 +418,7 @@ ma                  保存当前位置到书签 a ，书签名小写字母为文
 '>                  跳到上次可视模式选择区域的结束
 ```
 
-### 常用设置
+## 常用设置
 ```sh
 :set nocompatible   设置不兼容原始 vi 模式（必须设置在最开头）
 :set bs=?           设置BS键模式，现代编辑器为 :set bs=eol,start,indent
@@ -448,7 +448,7 @@ ma                  保存当前位置到书签 a ，书签名小写字母为文
 :syntax off         禁止语法高亮
 ```
 
-### 帮助信息
+## 帮助信息
 ```sh
 :h tutor            入门文档
 :h quickref         快速帮助
@@ -471,7 +471,7 @@ ma                  保存当前位置到书签 a ，书签名小写字母为文
 :version            显示当前 Vim 的版本号和特性
 ```
 
-### 外部命令
+## 外部命令
 ```sh
 :!ls                运行外部命令 ls，并等待返回
 :r !ls              将外部命令 ls 的输出捕获，并插入到光标后
@@ -482,7 +482,7 @@ ma                  保存当前位置到书签 a ，书签名小写字母为文
 :%!prog             运行文字过滤程序，如整理 json格式 :%!python -m json.tool
 ```
 
-### Quickfix 窗口
+## Quickfix 窗口
 ```sh
 :copen              打开 quickfix 窗口（查看编译，grep等信息）
 :copen 10           打开 quickfix 窗口，并且设置高度为 10
@@ -494,7 +494,7 @@ ma                  保存当前位置到书签 a ，书签名小写字母为文
 :cprev              跳到 quickfix 中上一个错误信息
 ```
 
-### 拼写检查
+## 拼写检查
 ```sh
 :set spell          打开拼写检查
 :set nospell        关闭拼写检查
@@ -505,7 +505,7 @@ zug                 撤销上一次加入的单词
 z=                  拼写建议
 ```
 
-### 代码折叠
+## 代码折叠
 ```sh
 za                  切换折叠
 zA                  递归切换折叠
@@ -527,7 +527,7 @@ zo                  打开一层代码
 zO                  打开光标下所有代码折叠
 ```
 
-### 宏录制
+## 宏录制
 ```sh
 qa                  开始录制名字为 a 的宏
 q                   结束录制宏
@@ -536,7 +536,7 @@ q                   结束录制宏
 @:                  重复上一个ex命令（即冒号命令）
 ```
 
-### 其他命令
+## 其他命令
 ```sh
 CTRL-X CTRL-F       插入模式下文件路径补全
 CTRL-X CTRL-O       插入下 Omnifunc 补全
@@ -586,7 +586,7 @@ SHIFT-INSERT        粘贴系统剪贴板的内容（GVIM）
 /^\n\{3}            搜索连续三个空行
 ```
 
-### Plugin - https://github.com/tpope/vim-commentary
+## Plugin - https://github.com/tpope/vim-commentary
 ```sh
 gcc                 注释当前行
 gc{motion}          注释 {motion} 所标注的区域，比如 gcap 注释整段
@@ -595,13 +595,13 @@ gc                  在 Visual Mode 下面按 gc 注释选中区域
 :7,17Commentary     注释 7 到 17 行
 ```
 
-### Plugin - https://github.com/junegunn/vim-easy-align
+## Plugin - https://github.com/junegunn/vim-easy-align
 ```sh
 :EasyAlign =        以第一个匹配的=为中心对齐
 :EasyAlign *=       匹配并且对齐所有=
 ```
 
-### Plugin - https://github.com/tpope/vim-unimpaired
+## Plugin - https://github.com/tpope/vim-unimpaired
 ```sh
 [space              向上插入空行
 ]space              向下插入空行
@@ -632,13 +632,13 @@ gc                  在 Visual Mode 下面按 gc 注释选中区域
 ]B                  缓存切换到最后一个文件，即 :blast
 ```
 
-### Plugin - https://github.com/skywind3000/asyncrun.vim
+## Plugin - https://github.com/skywind3000/asyncrun.vim
 ```sh
 :AsyncRun ls        异步运行命令 ls 结果输出到 quickfix 使用 :copen 查看
 :AsyncRun -raw ls   异步运行命令 ls 结果不匹配 errorformat
 ```
 
-### Plugin - https://github.com/gaving/vim-textobj-argument
+## Plugin - https://github.com/gaving/vim-textobj-argument
 ```sh
 cia                 改写函数参数
 caa                 改写函数参数（包括逗号分隔）
@@ -650,7 +650,7 @@ yia                 复制函数参数
 yaa                 复制函数参数（包括逗号分隔）
 ```
 
-### 网络资源
+## 网络资源
 ```sh
 最新版本            https://github.com/vim/vim   
 Windows 最新版      https://github.com/vim/vim-win32-installer/releases
@@ -667,7 +667,7 @@ reddit              https://www.reddit.com/r/vim/
 配色方案            http://vimcolors.com/
 ```
 
-### TIPS
+## TIPS
 ```sh
 - 永远不要用 CTRL-C 代替 <ESC> 完全不同的含义，容易错误中断运行的后台脚本
 - 很多人使用 CTRL-[ 代替 <ESC>，左手小指 CTRL，右手小指 [ 熟练后很方便
@@ -692,7 +692,7 @@ reddit              https://www.reddit.com/r/vim/
 - Windows 下的 GVim 可以设置 set rop=type:directx,renmode:5 增强显示
 ```
 
-### References
+## References
 ```sh
 https://github.com/groenewege/vimrc/blob/master/vim_cheat_sheet.txt
 http://blog.g-design.net/post/4789778607/vim-cheat-sheet
@@ -707,5 +707,5 @@ https://github.com/hobbestigrou/vimtips-fortune/blob/master/fortunes/vimtips
 https://github.com/glts/vim-cottidie/blob/master/autoload/cottidie/tips
 ```
 
-# vim: set ts=4 sw=4 tw=0 noet noautoindent fdm=manual :
+vim: set ts=4 sw=4 tw=0 noet noautoindent fdm=manual :
 
