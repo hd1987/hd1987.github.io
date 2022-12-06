@@ -1,0 +1,178 @@
+version: 5.1.0
+variant: default
+logo: /logo.svg
+head:
+  favicon: /favicon.svg
+  manifest:
+    name:
+    short_name:
+    start_url:
+    theme_color:
+    background_color:
+    display: standalone
+    icons:
+      - src: ""
+        sizes: ""
+        type:
+  open_graph:
+    title:
+    type: blog
+    url:
+    image:
+    site_name:
+    author:
+    description:
+    twitter_card:
+    twitter_id:
+    twitter_site:
+    google_plus:
+    fb_admins:
+    fb_app_id:
+  structured_data:
+    title:
+    description:
+    url:
+    author:
+    publisher:
+    publisher_logo:
+    image:
+  meta:
+    - ""
+  rss:
+navbar:
+  menu:
+    Home: /
+    Archives: /archives
+    # Categories: /categories
+    Tags: /tags
+    # About: /about
+  links:
+footer:
+  links:
+    GitHub:
+      icon: fab fa-github
+      url: https://github.com/hd1987/hd1987.github.io
+article:
+  highlight:
+    theme: atom-one-light
+    clipboard: false
+    fold: ''
+  readtime: false
+  update_time: false
+  licenses:
+search:
+  type: insight
+  index_pages: true
+# comment:
+#   type: disqus
+#   shortname: ""
+# donates:
+#   - type: afdian
+#     url: ""
+#   - type: alipay
+#     qrcode: ""
+#   - type: buymeacoffee
+#     url: ""
+#   - type: patreon
+#     url: ""
+#   - type: paypal
+#     business: ""
+#     currency_code: USD
+#   - type: wechat
+#     qrcode: ""
+share:
+  type: sharethis
+  install_url: "https://platform-api.sharethis.com/js/sharethis.js#property=638f3ad2a0f4de0012f03df8&product=inline-share-buttons&source=platform"
+sidebar:
+  left:
+    sticky: false
+  right:
+    sticky: true
+widgets:
+  - position: right
+    type: toc
+    index: true
+    collapsed: true
+    depth: 3
+  - position: right
+    type: profile
+    author: Adi Huang
+    author_title: Web Developer
+    location: Ningbo, China
+    avatar: /avatar.png
+    avatar_rounded: true
+    gravatar:
+    follow_link: https://github.com/hd1987
+    social_links:
+      Github:
+        icon: fab fa-github
+        url: https://github.com/hd1987
+      Npmjs:
+        icon: fa-brands fa-npm
+        url: https://www.npmjs.com/~adihuang
+      RSS:
+        icon: fas fa-rss
+        url: /
+  # - position: left
+  #   type: links
+  #   links:
+  #     Hexo: https://hexo.io
+  # - position: left
+  #   type: categories
+  # - position: left
+  #   type: recent_posts
+  # - position: left
+  #   type: archives
+  - position: right
+    type: tags
+    order_by: name
+    amount:
+    show_count: true
+  # - position: left
+  #   type: subscribe_email
+  #   description:
+  #   feedburner_id: ""
+  # - position: left
+  #   type: adsense
+  #   client_id: ""
+  #   slot_id: ""
+  # - position: left
+  #   type: followit
+  #   description:
+  #   action_url: ""
+  #   verification_code: ""
+plugins:
+  animejs: true
+  back_to_top: true
+  baidu_analytics:
+    tracking_id:
+  bing_webmaster:
+    tracking_id:
+  busuanzi: false
+  cnzz:
+    id:
+    web_id:
+  cookie_consent:
+    type: info
+    theme: edgeless
+    static: false
+    position: bottom-left
+    policyLink: https://www.cookiesandyou.com/
+  gallery: true
+  google_analytics:
+    tracking_id:
+  hotjar:
+    site_id:
+  katex: false
+  mathjax: false
+  outdated_browser: false
+  progressbar: true
+  statcounter:
+    project:
+    security:
+  twitter_conversion_tracking:
+    pixel_id:
+providers:
+  cdn: jsdelivr
+  fontcdn: google
+  iconcdn: fontawesome
