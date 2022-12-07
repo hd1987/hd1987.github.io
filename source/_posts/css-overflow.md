@@ -1,7 +1,10 @@
 ---
 title: 文字超出范围以省略号表示 
 date: 2016-03-24 22:30:54
-tags: css
+categories:
+  - Note
+tags:
+  - css
 toc: true
 ---
 

@@ -1,7 +1,11 @@
 ---
 title: sass - Retinal屏border显示1px
 date: 2016-12-06 15:55:26
-tags: [css, sass]
+categories:
+  - Note
+tags:
+  - css
+  - sass
 ---
 
 ```css

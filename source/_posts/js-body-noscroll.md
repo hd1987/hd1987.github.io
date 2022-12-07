@@ -1,7 +1,10 @@
 ---
 title: 当弹出popup悬浮层时，禁止body滚动
 date: 2017-01-14 21:41:14
-tags: js
+categories:
+  - Note
+tags:
+  - js
 ---
 
 示例：

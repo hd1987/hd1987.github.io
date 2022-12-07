@@ -1,7 +1,10 @@
 ---
 title: div移动到顶部固定不变
 date: 2016-03-25 23:15:06
-tags: js
+categories:
+  - Note
+tags:
+	- js
 ---
 
 ``` js

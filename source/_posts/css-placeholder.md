@@ -1,7 +1,10 @@
 ---
 title: html5默认提示文字placeholder更改颜色
 date: 2016-03-24 22:39:36
-tags: css
+categories:
+  - Note
+tags:
+  - css
 ---
 
 ``` css

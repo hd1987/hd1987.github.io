@@ -1,7 +1,10 @@
 ---
 title: brew常用命令
 date: 2017-05-24 13:32:43
-tags: brew
+categories:
+  - Manual
+tags:
+  - brew
 toc: true
 ---
 

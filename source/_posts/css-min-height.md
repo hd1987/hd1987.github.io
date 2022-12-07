@@ -1,14 +1,17 @@
 ---
 title: div设置最小高度（兼容IE6）
 date: 2016-03-25 08:40:43
-tags: css
+categories:
+  - Note
+tags:
+    - css
 ---
 
 ``` css
 .test {
-    height:auto!important;
-    height:200px;
-    min-height:200px;
+  height:auto!important;
+  height:200px;
+  min-height:200px;
 }
 ```
 

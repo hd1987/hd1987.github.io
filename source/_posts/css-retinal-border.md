@@ -1,7 +1,11 @@
 ---
 title: Retina屏幕下border 1px解决方案
 date: 2016-10-04 00:43:20
-tags: [css, retina]
+categories:
+  - Note
+tags:
+  - css
+  - retina
 ---
 
 retinal屏幕下@2x, @3x会使css设定好的border 1px变成2倍或者3倍。

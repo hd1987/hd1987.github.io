@@ -1,7 +1,11 @@
 ---
 title: Meta告知IE浏览器兼容模式
 date: 2016-03-23 12:42:04
-tags: [html, meta]
+categories:
+  - Note
+tags:
+  - html
+  - meta
 ---
 
 x-ua-compatible(浏览器兼容模式)

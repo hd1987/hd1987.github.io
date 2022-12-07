@@ -1,7 +1,10 @@
 ---
 title: Git使用摘要
 date: 2017-03-21 11:42:26
-tags: git
+categories:
+  - Manual
+tags:
+	- git
 toc: true
 ---
 

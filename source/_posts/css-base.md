@@ -1,7 +1,10 @@
 ---
 title: base.css
 date: 2016-10-10 22:59:44
-tags: css
+categories:
+  - Note
+tags:
+  - css
 ---
 
 常用的base.css初始化样式

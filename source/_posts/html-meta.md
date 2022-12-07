@@ -1,7 +1,11 @@
 ---
 title: 移动端wap用到的头部信息代码meta
 date: 2016-03-22 22:57:59
-tags: [html, meta]
+categories:
+  - Note
+tags:
+  - html
+  - meta
 toc: true
 ---
 

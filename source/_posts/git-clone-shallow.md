@@ -1,7 +1,10 @@
 ---
 title: git shallow clone
 date: 2018-06-04 13:28:48
-tags: git
+categories:
+  - Note
+tags:
+  - git
 ---
 
 `git clone` 默认会下载项目的完整历史版本，如果你只关心最新版的代码，而不关心之前的历史信息，可以使用 git 的浅复制功能：

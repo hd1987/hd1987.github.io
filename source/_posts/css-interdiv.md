@@ -1,7 +1,10 @@
 ---
 title: css控制 外层div高度未知 内层div高度100%
 date: 2016-03-24 08:39:17
-tags: css
+categories:
+  - Note
+tags:
+  - css
 ---
 
 外层：div设置超出不显示，

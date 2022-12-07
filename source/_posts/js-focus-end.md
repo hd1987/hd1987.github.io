@@ -1,7 +1,10 @@
 ---
 title: js focus end
 date: 2018-10-16 16:22:59
-tags: js
+categories:
+  - Note
+tags:
+  - js
 ---
 
 ```js

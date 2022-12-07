@@ -1,7 +1,10 @@
 ---
 title: js显示本地时间年月日
 date: 2016-03-25 22:54:12
-tags: js
+categories:
+  - Note
+tags:
+  - js
 ---
 
 ``` js

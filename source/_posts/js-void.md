@@ -1,7 +1,10 @@
 ---
 title: js a链接不跳转 
 date: 2016-03-25 22:58:34
-tags: js
+categories:
+  - Note
+tags:
+  - js
 ---
 
 ``` js

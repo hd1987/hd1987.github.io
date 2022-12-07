@@ -1,7 +1,11 @@
 ---
 title: gulpfile.js
 date: 2016-10-10 23:23:48
-tags: [js, nodejs]
+categories:
+  - Note
+tags:
+  - js
+  - nodejs
 ---
 
 gulpfile.js放置在根目录下，

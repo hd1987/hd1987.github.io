@@ -1,7 +1,11 @@
 ---
 title: retinajs使用摘要
 date: 2016-10-04 09:01:17
-tags: [js, retina]
+categories:
+  - Note
+tags:
+  - js
+  - retina
 ---
 
 官方文档：[retinajs](https://github.com/imulus/retinajs)

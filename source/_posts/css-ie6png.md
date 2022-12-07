@@ -1,7 +1,11 @@
 ---
 title: IE6 png图片透明的2种方法
 date: 2016-03-25 08:58:45
-tags: [css, js]
+categories:
+  - Note
+tags:
+   - css
+   - js
 ---
 
 一.图片当背景，CSS方法

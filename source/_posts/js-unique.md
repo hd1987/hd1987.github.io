@@ -1,7 +1,10 @@
 ---
 title: js数组去重的方法
 date: 2018-10-22 09:11:42
-tags: js
+categories:
+  - Note
+tags:
+  - js
 ---
 
 ```js

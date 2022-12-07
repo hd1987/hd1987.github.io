@@ -1,7 +1,11 @@
 ---
 title: linux软链接创建、删除和更新
 date: 2019-11-13 11:52:49
-tags: linux
+categories:
+  - Note
+tags:
+  - linux
+  - cli
 toc: true
 ---
 

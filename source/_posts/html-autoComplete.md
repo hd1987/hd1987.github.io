@@ -1,7 +1,10 @@
 ---
 title: input text 去掉标签下拉提示(不显示下拉历史)
 date: 2016-03-23 12:32:16
-tags: html
+categories:
+  - Note
+tags:
+  - html
 ---
 
 ``` html

@@ -1,7 +1,10 @@
 ---
 title: js链式取值（函数解析字符串）
 date: 2018-10-15 22:58:34
-tags: js
+categories:
+  - Note
+tags:
+  - js
 ---
 
 开发中，链式取值是非常正常的操作，如：  

@@ -1,7 +1,10 @@
 ---
 title: Markdown 语法
 date: 2016-04-14 22:44:50
-tags: markdown
+categories:
+  - Manual
+tags:
+	- markdown
 toc: true
 ---
 

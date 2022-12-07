@@ -1,7 +1,11 @@
 ---
 title: vim cheatsheet
 date: 2020-08-13 11:00:00
-tags: vim
+categories:
+  - Note
+tags:
+  - vim
+  - cli
 toc: true
 ---
 

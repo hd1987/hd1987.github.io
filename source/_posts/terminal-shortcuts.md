@@ -1,7 +1,11 @@
 ---
 title: Terminal 几个快捷键
 date: 2017-08-11 17:49:58
-tags: terminal
+categories:
+  - Note
+tags:
+  - terminal
+  - cli
 ---
 
 #### 将光标移动到行首

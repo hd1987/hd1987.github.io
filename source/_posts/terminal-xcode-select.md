@@ -1,7 +1,11 @@
 ---
 title: CommandLineTools reinstall
 date: 2021-08-11 17:49:58
-tags: terminal
+categories:
+  - Note
+tags:
+  - terminal
+  - cli
 ---
 
 ```

@@ -1,7 +1,10 @@
 ---
 title: contenteditable 属性规定是否可编辑元素的内容
 date: 2016-03-23 12:38:23
-tags: html
+categories:
+  - Note
+tags:
+  - html
 ---
 
 ``` html

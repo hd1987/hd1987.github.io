@@ -1,7 +1,10 @@
 ---
 title: git cheatsheet 中文速查表 (2019/09/16)
 date: 2020-05-25 13:35:16
-tags: git
+categories:
+  - Manual
+tags:
+	- git
 toc: true
 ---
 

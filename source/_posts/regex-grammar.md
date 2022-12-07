@@ -1,7 +1,10 @@
 ---
 title: Regular Expressions 正则表达式语法
 date: 2022-02-05 15:34:23
-tags: regex
+categories:
+  - Manual
+tags:
+  - regex
 toc: true
 ---
 

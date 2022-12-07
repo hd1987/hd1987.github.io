@@ -1,7 +1,10 @@
 ---
 title: Query中阻止事件冒泡方式  
 date: 2016-03-25 23:50:53
-tags: js
+categories:
+  - Note
+tags:
+	- js
 ---
 
 ``` js

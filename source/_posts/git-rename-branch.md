@@ -1,7 +1,10 @@
 ---
 title: git 修改本地和远程分支名称
 date: 2021-10-20 13:18:00
-tags: git
+categories:
+  - Note
+tags:
+  - git
 ---
 
 `git branch -a`  #查看所有分支

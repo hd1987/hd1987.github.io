@@ -1,7 +1,10 @@
 ---
 title: JS Standard 代码规范
 date: 2018-08-08 21:50:56
-tags: js
+categories:
+  - Note
+tags:
+  - js
 toc: true
 ---
 

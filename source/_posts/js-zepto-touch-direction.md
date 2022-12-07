@@ -1,7 +1,11 @@
 ---
 title: zepto判断左右滑动
 date: 2016-03-26 00:02:39
-tags: [js, zepto]
+categories:
+  - Note
+tags:
+    - js
+    - zepto
 ---
 
 ``` js

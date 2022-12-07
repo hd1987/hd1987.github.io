@@ -1,7 +1,10 @@
 ---
 title: Javascript、Jquery获取浏览器和屏幕各种高度宽度
 date: 2016-10-31 13:44:11
-tags: js
+categories:
+  - Note
+tags:
+  - js
 ---
 
 Javascript:

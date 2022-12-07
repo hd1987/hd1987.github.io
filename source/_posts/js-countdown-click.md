@@ -1,7 +1,10 @@
 ---
 title: 点击倒计时countdown
 date: 2017-05-09 16:14:16
-tags: js
+categories:
+  - Note
+tags:
+  - js
 ---
 
 ```js

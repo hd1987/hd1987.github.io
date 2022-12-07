@@ -1,7 +1,10 @@
 ---
 title: jquery判断地址栏是否存在某参数 
 date: 2016-03-25 23:19:35
-tags: js
+categories:
+  - Note
+tags:
+	- js
 ---
 
 ``` js

@@ -1,7 +1,11 @@
 ---
 title: 微信H5自定义分享在ios下失效的问题
 date: 2022-06-06 10:29:03
-tags: [wechat, ios]
+categories:
+  - Note
+tags:
+  - wechat
+  - ios
 ---
 
 **ios分享失效，表现为不显示缩略图，自定义url不正确，无法获取title等**

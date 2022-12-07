@@ -1,7 +1,10 @@
 ---
 title: hexo常用命令笔记
 date: 2016-04-14 22:15:26
-tags: hexo
+categories:
+  - Manual
+tags:
+  - hexo
 toc: true
 ---
 

@@ -1,7 +1,10 @@
 ---
 title: 使用JS判断移动设备的终端类型
 date: 2016-03-25 23:00:34
-tags: js
+categories:
+  - Note
+tags:
+	- js
 ---
 
 方法一

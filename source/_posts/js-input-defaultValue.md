@@ -1,7 +1,10 @@
 ---
 title: input默认提示文字
 date: 2016-03-25 23:16:32
-tags: js
+categories:
+  - Note
+tags:
+	- js
 ---
 
 ``` js

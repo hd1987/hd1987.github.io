@@ -1,7 +1,10 @@
 ---
 title: jQuery插件的基本格式写法
 date: 2016-09-27 23:46:55
-tags: js
+categories:
+  - Note
+tags:
+  - js
 ---
 
 ```js

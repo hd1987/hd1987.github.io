@@ -1,7 +1,10 @@
 ---
 title: markdown常用基本语法概括
 date: 2016-03-23 21:23:51
-tags: markdown
+categories:
+  - Manual
+tags:
+  - markdown
 toc: true
 ---
 ###  标题设置（让字体变大，和word的标题意思一样）

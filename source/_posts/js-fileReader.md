@@ -1,7 +1,10 @@
 ---
 title: 图片上传预览, 通过file标签和js的FileReader接口
 date: 2018-01-19 17:02:43
-tags: js
+categories:
+  - Note
+tags:
+  - js
 ---
 
 用html的file标签就能实现图片上传前预览，就是通过file标签和js的FileReader接口，把选择的图片文件调用readAsDataURL方法，把图片数据转成base64字符串形式显示在页面上。

@@ -1,7 +1,10 @@
 ---
 title: css3 flex弹性布局摘要
 date: 2018-08-07 11:13:17
-tags: css
+categories:
+  - Manual
+tags:
+  - css
 toc: true
 ---
 

@@ -1,7 +1,10 @@
 ---
 title: Git飞行规则(Flight Rules)
 date: 2021-01-19 16:58:20
-tags: git
+categories:
+  - Manual
+tags:
+  - git
 toc: true
 ---
 

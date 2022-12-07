@@ -1,7 +1,10 @@
 ---
 title: 两个div同步滑动（js, jquery）
 date: 2016-03-25 23:08:45
-tags: js
+categories:
+  - Note
+tags:
+	- js
 ---
 
 方法一.使用js（适用web和wap）

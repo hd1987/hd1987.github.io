@@ -1,7 +1,10 @@
 ---
 title: mac下 navicat 如何连接本地 mysql（mamp pro 服务器）
 date: 2016-07-18 13:54:00
-tags: mysql
+categories:
+  - Note
+tags:
+  - mysql
 ---
 
 1. 打开mac 下的 navicat

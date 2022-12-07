@@ -1,7 +1,10 @@
 ---
 title: sketch中英文切换
 date: 2021-02-20 16:58:20
-tags: sketch
+categories:
+  - Note
+tags:
+  - sketch
 ---
 
 Sketch 54版本之后会强制使用Mac系统语言

@@ -1,7 +1,11 @@
 ---
 title: mac apache start, stop, restart
 date: 2018-08-08 21:39:56
-tags: terminal
+categories:
+  - Note
+tags:
+  - terminal
+  - cli
 ---
 
 ```

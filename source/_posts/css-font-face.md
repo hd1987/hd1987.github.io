@@ -1,7 +1,11 @@
 ---
 title: 自定义字体 @font-face
 date: 2017-04-28 16:47:20
-tags: [css, sass]
+categories:
+  - Note
+tags:
+  - css
+  - sass
 ---
 
 ```css

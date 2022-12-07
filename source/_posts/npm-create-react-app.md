@@ -1,7 +1,11 @@
 ---
 title: create-react-app 使用摘要
 date: 2018-02-22 11:05:44
-tags: [npm, react]
+categories:
+  - Note
+tags:
+  - npm
+  - react
 ---
 
 Github地址: [create-react-app](https://github.com/facebook/create-react-app)

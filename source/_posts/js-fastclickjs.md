@@ -1,7 +1,10 @@
 ---
 title: fastclick.js插件使用简单说明
 date: 2016-08-16 14:01:37
-tags: js
+categories:
+  - Note
+tags:
+  - js
 ---
 
 资源下载：[fastclick.js](https://github.com/ftlabs/fastclick)
@@ -24,9 +27,9 @@ tags: js
 
 ```js
 if ('addEventListener' in document) {  
-    document.addEventListener('DOMContentLoaded', function() {  
-        FastClick.attach(document.body);  
-    }, false);  
+  document.addEventListener('DOMContentLoaded', function() {  
+    FastClick.attach(document.body);  
+  }, false);  
 }
 ```
 
@@ -34,7 +37,7 @@ if ('addEventListener' in document) {
 
 ```js
 $(function() {  
-    FastClick.attach(document.body);  
+  FastClick.attach(document.body);  
 });
 ```
 

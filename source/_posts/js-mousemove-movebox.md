@@ -1,7 +1,10 @@
 ---
 title: 跟随鼠标移动的悬浮提示框案例
 date: 2016-03-25 23:48:55
-tags: js
+categories:
+  - Note
+tags:
+	- js
 ---
 
 js部分

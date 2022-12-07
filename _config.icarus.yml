@@ -43,7 +43,7 @@ navbar:
   menu:
     Home: /
     Archives: /archives
-    # Categories: /categories
+    Categories: /categories
     Tags: /tags
     # About: /about
   links:

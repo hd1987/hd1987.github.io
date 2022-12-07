@@ -1,7 +1,11 @@
 ---
 title: SASS用法指南
 date: 2016-08-16 14:20:29
-tags: [css, sass]
+categories:
+  - Note
+tags:
+  - css
+  - sass
 toc: true
 ---
 
