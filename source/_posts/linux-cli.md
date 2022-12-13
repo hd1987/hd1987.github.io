@@ -2,7 +2,7 @@
 title: linux常用命令
 date: 2017-06-12 11:05:55
 categories:
-  - Note
+  - Manual
 tags:
   - linux
   - cli

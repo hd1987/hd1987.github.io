@@ -2,7 +2,7 @@
 title: vagrant
 date: 2017-08-10 13:18:51
 categories:
-  - Note
+  - Manual
 tags:
   - vagrant
 ---
