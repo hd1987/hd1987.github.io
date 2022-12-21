@@ -125,7 +125,7 @@ widgets:
   #   type: archives
   - position: right
     type: tags
-    order_by: name
+    order_by: -length
     amount:
     show_count: true
   # - position: left
