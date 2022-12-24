@@ -10,22 +10,33 @@ toc: true
 
 ### 一、单行溢出，超出部分显示...或者截取。前提必须有宽度。
 ``` css
-p { width:100px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis;}
+p {
+  width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 ```
 
 <!--more-->
 
 ### 二、多行溢出
 ``` css
-p { display:-webkit-box; overflow:hidden; text-overflow:ellipsis; -webkit-line-clamp:2; -webkit-box-orient:vertical;}
+p {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
 ```
 
 适用范围：
 因使用了WebKit的CSS扩展属性，该方法适用于WebKit浏览器及移动端；
 说明：
-1.-webkit-line-clamp用来限制在一个块元素显示的文本的行数。 为了实现该效果，它需要组合其他的WebKit属性。常见结合属性：
-2.display: -webkit-box; 必须结合的属性 ，将对象作为弹性伸缩盒子模型显示 。
-3.-webkit-box-orient 必须结合的属性 ，设置或检索伸缩盒对象的子元素的排列方式 。
+1.`-webkit-line-clamp`用来限制在一个块元素显示的文本的行数。 为了实现该效果，它需要组合其他的WebKit属性。常见结合属性：
+2.`display: -webkit-box;` 必须结合的属性 ，将对象作为弹性伸缩盒子模型显示 。
+3.`-webkit-box-orient` 必须结合的属性 ，设置或检索伸缩盒对象的子元素的排列方式 。
 
 ### 三、移动端
 ``` css
