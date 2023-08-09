@@ -1,12 +1,13 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Markdown 语法 - AdiHuang</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="AdiHuang"><meta name="msapplication-TileImage" content="/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="AdiHuang"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="Markdown 的设计哲学 Markdown 的目標是實現「易讀易寫」。不過最需要強調的便是它的可讀性。一份使用 Markdown 格式撰寫的文件應該可以直接以純文字發佈，並且看起來不會像是由許多標籤或是格式指令所構成。Markdown 的語法有個主要的目的：用來作為一種網路內容的寫作用語言。"><meta property="og:type" content="blog"><meta property="og:title" content="Markdown 语法"><meta property="og:url" content="http://blog.adihuang.com/2016/04/14/markdown/"><meta property="og:site_name" content="AdiHuang"><meta property="og:description" content="Markdown 的设计哲学 Markdown 的目標是實現「易讀易寫」。不過最需要強調的便是它的可讀性。一份使用 Markdown 格式撰寫的文件應該可以直接以純文字發佈，並且看起來不會像是由許多標籤或是格式指令所構成。Markdown 的語法有個主要的目的：用來作為一種網路內容的寫作用語言。"><meta property="og:locale" content="en_US"><meta property="og:image" content="http://zh.mweb.im/asset/img/set-up-git.gif"><meta property="article:published_time" content="2016-04-14T14:44:50.000Z"><meta property="article:modified_time" content="2023-07-27T07:12:20.857Z"><meta property="article:author" content="AdiHuang"><meta property="article:tag" content="markdown"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="http://zh.mweb.im/asset/img/set-up-git.gif"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://blog.adihuang.com/2016/04/14/markdown/"},"headline":"Markdown 语法","image":["http://zh.mweb.im/asset/img/set-up-git.gif"],"datePublished":"2016-04-14T14:44:50.000Z","dateModified":"2023-07-27T07:12:20.857Z","author":{"@type":"Person","name":"AdiHuang"},"publisher":{"@type":"Organization","name":"AdiHuang","logo":{"@type":"ImageObject","url":"http://blog.adihuang.com/logo.svg"}},"description":"Markdown 的设计哲学 Markdown 的目標是實現「易讀易寫」。不過最需要強調的便是它的可讀性。一份使用 Markdown 格式撰寫的文件應該可以直接以純文字發佈，並且看起來不會像是由許多標籤或是格式指令所構成。Markdown 的語法有個主要的目的：用來作為一種網路內容的寫作用語言。"}</script><link rel="canonical" href="http://blog.adihuang.com/2016/04/14/markdown/"><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Markdown 语法 - AdiHuang</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="AdiHuang"><meta name="msapplication-TileImage" content="/favicon.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="AdiHuang"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="Markdown 的设计哲学 Markdown 的目標是實現「易讀易寫」。不過最需要強調的便是它的可讀性。一份使用 Markdown 格式撰寫的文件應該可以直接以純文字發佈，並且看起來不會像是由許多標籤或是格式指令所構成。Markdown 的語法有個主要的目的：用來作為一種網路內容的寫作用語言。"><meta property="og:type" content="blog"><meta property="og:title" content="Markdown 语法"><meta property="og:url" content="http://blog.adihuang.com/2016/04/14/markdown/"><meta property="og:site_name" content="AdiHuang"><meta property="og:description" content="Markdown 的设计哲学 Markdown 的目標是實現「易讀易寫」。不過最需要強調的便是它的可讀性。一份使用 Markdown 格式撰寫的文件應該可以直接以純文字發佈，並且看起來不會像是由許多標籤或是格式指令所構成。Markdown 的語法有個主要的目的：用來作為一種網路內容的寫作用語言。"><meta property="og:locale" content="en_US"><meta property="og:image" content="http://zh.mweb.im/asset/img/set-up-git.gif"><meta property="article:published_time" content="2016-04-14T14:44:50.000Z"><meta property="article:modified_time" content="2023-08-09T03:43:30.787Z"><meta property="article:author" content="AdiHuang"><meta property="article:tag" content="markdown"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="http://zh.mweb.im/asset/img/set-up-git.gif"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://blog.adihuang.com/2016/04/14/markdown/"},"headline":"Markdown 语法","image":["http://zh.mweb.im/asset/img/set-up-git.gif"],"datePublished":"2016-04-14T14:44:50.000Z","dateModified":"2023-08-09T03:43:30.787Z","author":{"@type":"Person","name":"AdiHuang"},"publisher":{"@type":"Organization","name":"AdiHuang","logo":{"@type":"ImageObject","url":"http://blog.adihuang.com/logo.svg"}},"description":"Markdown 的设计哲学 Markdown 的目標是實現「易讀易寫」。不過最需要強調的便是它的可讀性。一份使用 Markdown 格式撰寫的文件應該可以直接以純文字發佈，並且看起來不會像是由許多標籤或是格式指令所構成。Markdown 的語法有個主要的目的：用來作為一種網路內容的寫作用語言。"}</script><link rel="canonical" href="http://blog.adihuang.com/2016/04/14/markdown/"><link rel="icon" href="/favicon.svg"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-dark.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
   (function () {
       function switchTab() {
           if (!location.hash) {
             return;
           }
 
-          const $tabMenu = document.querySelector(`a[href="${location.hash}"]`);
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
           if (!$tabMenu) {
             return;
           }
@@ -20,7 +21,7 @@
           if ($tabMenu) {
               $tabMenu.parentElement.classList.add('is-active');
           }
-          const $activeTab = document.querySelector(location.hash);
+          const $activeTab = document.querySelector(id);
           if ($activeTab) {
               $activeTab.classList.remove('is-hidden');
           }
@@ -35,7 +36,7 @@
 
 <h2 id="本文约定"><a href="#本文约定" class="headerlink" title="本文约定"></a>本文约定</h2><p>如果有写 <code>效果如下：</code>， 在 MWeb 编辑状态下只有用 <code>CMD + R</code> 预览才可以看效果。</p>
 <h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>Markdown 语法：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 第一级标题 `&lt;h1&gt;` </span><br><span class="line">## 第二级标题 `&lt;h2&gt;` </span><br><span class="line">###### 第六级标题 `&lt;h6&gt;` </span><br></pre></td></tr></table></figure>
+<figure class="highlight clean"><table><tr><td class="code"><pre><code class="hljs clean"># 第一级标题 `&lt;h1&gt;` <br>## 第二级标题 `&lt;h2&gt;` <br>###### 第六级标题 `&lt;h6&gt;` <br></code></pre></td></tr></table></figure>
 
 <!-- 效果如下：
 
@@ -46,14 +47,14 @@
 
 
 <h2 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h2><p>Markdown 语法：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">*这些文字会生成`&lt;em&gt;`*</span><br><span class="line">_这些文字会生成`&lt;u&gt;`_</span><br><span class="line"></span><br><span class="line">**这些文字会生成`&lt;strong&gt;`**</span><br><span class="line">__这些文字会生成`&lt;strong&gt;`__</span><br></pre></td></tr></table></figure>
+<figure class="highlight autohotkey"><table><tr><td class="code"><pre><code class="hljs autohotkey">*这些文字会生成`&lt;em&gt;`*<br>_这些文字会生成`&lt;u&gt;`_<br><br>**这些文字会生成`&lt;strong&gt;`**<br>__这些文字会生成`&lt;strong&gt;`__<br></code></pre></td></tr></table></figure>
 
 <p>在 MWeb 中的快捷键为： <code>CMD + U</code>、<code>CMD + I</code>、<code>CMD + B</code><br>效果如下：</p>
 <p><em>这些文字会生成<code>&lt;em&gt;</code></em><br><em>这些文字会生成<code>&lt;u&gt;</code></em></p>
 <p><strong>这些文字会生成<code>&lt;strong&gt;</code></strong><br><strong>这些文字会生成<code>&lt;strong&gt;</code></strong></p>
 <h2 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h2><p>四个及以上空格加回车。<br>如果不想打这么多空格，只要回车就为换行，请勾选：<code>Preferences</code> - <code>Themes</code> - <code>Translate newlines to &lt;br&gt; tags</code></p>
 <h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>Markdown 语法：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* 项目一 无序列表 `* + 空格键`</span><br><span class="line">* 项目二</span><br><span class="line">	* 项目二的子项目一 无序列表 `TAB + * + 空格键`</span><br><span class="line">	* 项目二的子项目二</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">*</span> 项目一 无序列表 <span class="hljs-code">`* + 空格键`</span><br><span class="hljs-bullet">*</span> 项目二<br><span class="hljs-bullet">	*</span> 项目二的子项目一 无序列表 <span class="hljs-code">`TAB + * + 空格键`</span><br><span class="hljs-bullet">	*</span> 项目二的子项目二<br></code></pre></td></tr></table></figure>
 
 <p>在 MWeb 中的快捷键为： <code>Option + U</code><br>效果如下：</p>
 <ul>
@@ -65,7 +66,7 @@
 </li>
 </ul>
 <h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><p>Markdown 语法：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 项目一 有序列表 `数字 + . + 空格键`</span><br><span class="line">2. 项目二 </span><br><span class="line">3. 项目三</span><br><span class="line">	1. 项目三的子项目一 有序列表 `TAB + 数字 + . + 空格键`</span><br><span class="line">	2. 项目三的子项目二</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><code class="hljs markdown"><span class="hljs-bullet">1.</span> 项目一 有序列表 <span class="hljs-code">`数字 + . + 空格键`</span><br><span class="hljs-bullet">2.</span> 项目二 <br><span class="hljs-bullet">3.</span> 项目三<br><span class="hljs-bullet">	1.</span> 项目三的子项目一 有序列表 <span class="hljs-code">`TAB + 数字 + . + 空格键`</span><br><span class="hljs-bullet">	2.</span> 项目三的子项目二<br></code></pre></td></tr></table></figure>
 
 <p>效果如下：</p>
 <ol>
@@ -78,7 +79,7 @@
 </li>
 </ol>
 <h3 id="任务列表（Task-lists）"><a href="#任务列表（Task-lists）" class="headerlink" title="任务列表（Task lists）"></a>任务列表（Task lists）</h3><p>Markdown 语法：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- [ ] 任务一 未做任务 `- + 空格 + [ ]`</span><br><span class="line">- [x] 任务二 已做任务 `- + 空格 + [x]`</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css">- <span class="hljs-selector-attr">[ ]</span> 任务一 未做任务 `- + 空格 + <span class="hljs-selector-attr">[ ]</span>`<br>- <span class="hljs-selector-attr">[x]</span> 任务二 已做任务 `- + 空格 + <span class="hljs-selector-attr">[x]</span>`<br></code></pre></td></tr></table></figure>
 
 <p>效果如下：</p>
 <ul>
@@ -86,17 +87,17 @@
 <li><input checked="" disabled="" type="checkbox"> 任务二 已做任务 <code>- + 空格 + [x]</code></li>
 </ul>
 <h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>Markdown 语法：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">![GitHub set up](http://zh.mweb.im/asset/img/set-up-git.gif)</span><br><span class="line">格式: ![Alt Text](url)</span><br></pre></td></tr></table></figure>
+<figure class="highlight dsconfig"><table><tr><td class="code"><pre><code class="hljs dsconfig">![<span class="hljs-string">GitHub</span> <span class="hljs-string">set</span> <span class="hljs-string">up</span>](<span class="hljs-string">http</span>://<span class="hljs-string">zh</span>.<span class="hljs-string">mweb</span>.<span class="hljs-string">im</span>/<span class="hljs-string">asset</span>/<span class="hljs-string">img</span>/<span class="hljs-built_in">set-up-git.gif)</span><br>格式: ![<span class="hljs-string">Alt</span> <span class="hljs-string">Text</span>](<span class="hljs-string">url</span>)<br></code></pre></td></tr></table></figure>
 
 <p><code>Control + Shift + I</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，还可以用拖放图片、<code>CMD + V</code> 粘贴、<code>CMD + Option + I</code> 导入这三种方式来增加图片。<br>效果如下：</p>
 <p><img src="http://zh.mweb.im/asset/img/set-up-git.gif" alt="GitHub set up"></p>
 <h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><p>Markdown 语法：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">email &lt;example@example.com&gt;</span><br><span class="line">[GitHub](http://github.com)</span><br><span class="line">自动生成连接  &lt;http://www.github.com/&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><code class="hljs angelscript">email &lt;<span class="hljs-symbol">example@</span>example.com&gt;<br><span class="hljs-string">[GitHub]</span>(http:<span class="hljs-comment">//github.com)</span><br>自动生成连接  &lt;http:<span class="hljs-comment">//www.github.com/&gt;</span><br></code></pre></td></tr></table></figure>
 
 <p><code>Control + Shift + L</code> 可插入Markdown语法。<br>如果是 MWeb 的文档库中的文档，拖放或<code>CMD + Option + I</code> 导入非图片时，会生成连接。<br>效果如下：</p>
-<p>Email 连接： <a href="mailto:&#x65;&#x78;&#97;&#x6d;&#112;&#x6c;&#x65;&#64;&#x65;&#120;&#97;&#x6d;&#x70;&#108;&#101;&#46;&#x63;&#x6f;&#x6d;">&#x65;&#x78;&#97;&#x6d;&#112;&#x6c;&#x65;&#64;&#x65;&#120;&#97;&#x6d;&#x70;&#108;&#101;&#46;&#x63;&#x6f;&#x6d;</a><br><a target="_blank" rel="noopener" href="http://github.com/">连接标题Github网站</a><br>自动生成连接像： <a target="_blank" rel="noopener" href="http://www.github.com/">http://www.github.com/</a> 这样</p>
+<p>Email 连接： <a href="mailto:&#x65;&#120;&#97;&#109;&#112;&#108;&#x65;&#64;&#101;&#120;&#x61;&#109;&#112;&#x6c;&#x65;&#46;&#99;&#x6f;&#109;">&#x65;&#120;&#97;&#109;&#112;&#108;&#x65;&#64;&#101;&#120;&#x61;&#109;&#112;&#x6c;&#x65;&#46;&#99;&#x6f;&#109;</a><br><a target="_blank" rel="noopener" href="http://github.com/">连接标题Github网站</a><br>自动生成连接像： <a target="_blank" rel="noopener" href="http://www.github.com/">http://www.github.com/</a> 这样</p>
 <h2 id="区块引用"><a href="#区块引用" class="headerlink" title="区块引用"></a>区块引用</h2><p>Markdown 语法：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">某某说:</span><br><span class="line">&gt; 第一行引用</span><br><span class="line">&gt; 第二行费用文字</span><br></pre></td></tr></table></figure>
+<figure class="highlight node-repl"><table><tr><td class="code"><pre><code class="hljs node-repl">某某说:<br><span class="hljs-meta prompt_">&gt;</span> <span class="language-javascript">第一行引用</span><br><span class="hljs-meta prompt_">&gt;</span> <span class="language-javascript">第二行费用文字</span><br></code></pre></td></tr></table></figure>
 
 <p><code>CMD + Shift + B</code> 可插入Markdown语法。<br>效果如下：</p>
 <p>某某说:</p>
@@ -104,29 +105,29 @@
 <p>第一行引用<br>第二行费用文字</p>
 </blockquote>
 <h2 id="行内代码"><a href="#行内代码" class="headerlink" title="行内代码"></a>行内代码</h2><p>Markdown 语法：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">像这样即可：`&lt;addr&gt;` `code`</span><br></pre></td></tr></table></figure>
+<figure class="highlight autohotkey"><table><tr><td class="code"><pre><code class="hljs autohotkey">像这样即可：`&lt;addr&gt;` `code`<br></code></pre></td></tr></table></figure>
 
 <p><code>CMD + K</code> 可插入Markdown语法。<br>效果如下：</p>
 <p>像这样即可：<code>&lt;addr&gt;</code> <code>code</code></p>
 <h2 id="多行或者一段代码"><a href="#多行或者一段代码" class="headerlink" title="多行或者一段代码"></a>多行或者一段代码</h2><p>Markdown 语法：</p>
-<pre><code><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">fancyAlert</span>(<span class="params">arg</span>) &#123;</span><br><span class="line">  <span class="keyword">if</span>(arg) &#123;</span><br><span class="line">    $.<span class="title function_">facebox</span>(&#123;<span class="attr">div</span>:<span class="string">&#x27;#foo&#x27;</span>&#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code><figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">fancyAlert</span>(<span class="hljs-params">arg</span>) &#123;<br>  <span class="hljs-keyword">if</span>(arg) &#123;<br>    $.<span class="hljs-title function_">facebox</span>(&#123;<span class="hljs-attr">div</span>:<span class="hljs-string">&#x27;#foo&#x27;</span>&#125;)<br>  &#125;<br><br>&#125;<br></code></pre></td></tr></table></figure>
 </code></pre>
 <p><code>CMD + Shift + K</code> 可插入Markdown语法。<br>效果如下：</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">fancyAlert</span>(<span class="params">arg</span>) &#123;</span><br><span class="line">	<span class="keyword">if</span>(arg) &#123;</span><br><span class="line">		$.<span class="title function_">facebox</span>(&#123;<span class="attr">div</span>:<span class="string">&#x27;#foo&#x27;</span>&#125;)</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><code class="hljs js"><span class="hljs-keyword">function</span> <span class="hljs-title function_">fancyAlert</span>(<span class="hljs-params">arg</span>) &#123;<br>	<span class="hljs-keyword">if</span>(arg) &#123;<br>		$.<span class="hljs-title function_">facebox</span>(&#123;<span class="hljs-attr">div</span>:<span class="hljs-string">&#x27;#foo&#x27;</span>&#125;)<br>	&#125;<br>	<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h2 id="顺序图或流程图"><a href="#顺序图或流程图" class="headerlink" title="顺序图或流程图"></a>顺序图或流程图</h2><p>Markdown 语法：</p>
-<pre><code><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">张三-&gt;李四: 嘿，小四儿, 写博客了没?</span><br><span class="line">Note right of 李四: 李四愣了一下，说：</span><br><span class="line">李四--&gt;张三: 忙得吐血，哪有时间写。</span><br></pre></td></tr></table></figure>
+<pre><code><figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs sequence">张三-&gt;李四: 嘿，小四儿, 写博客了没?<br>Note right of 李四: 李四愣了一下，说：<br>李四--&gt;张三: 忙得吐血，哪有时间写。<br></code></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: 开始</span><br><span class="line">e=&gt;end: 结束</span><br><span class="line">op=&gt;operation: 我的操作</span><br><span class="line">cond=&gt;condition: 确认？</span><br><span class="line"></span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs flow">st=&gt;start: 开始<br>e=&gt;end: 结束<br>op=&gt;operation: 我的操作<br>cond=&gt;condition: 确认？<br><br>st-&gt;op-&gt;cond<br>cond(yes)-&gt;e<br>cond(no)-&gt;op<br></code></pre></td></tr></table></figure>
 </code></pre>
 <p>效果如下（ <code>Preferences</code> - <code>Themes</code> - <code>Enable sequence &amp; flow chart</code> 才会看到效果 ）：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">张三-&gt;李四: 嘿，小四儿, 写博客了没?</span><br><span class="line">Note right of 李四: 李四愣了一下，说：</span><br><span class="line">李四--&gt;张三: 忙得吐血，哪有时间写。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs sequence">张三-&gt;李四: 嘿，小四儿, 写博客了没?<br>Note right of 李四: 李四愣了一下，说：<br>李四--&gt;张三: 忙得吐血，哪有时间写。<br></code></pre></td></tr></table></figure>
 
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: 开始</span><br><span class="line">e=&gt;end: 结束</span><br><span class="line">op=&gt;operation: 我的操作</span><br><span class="line">cond=&gt;condition: 确认？</span><br><span class="line"></span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><code class="hljs flow">st=&gt;start: 开始<br>e=&gt;end: 结束<br>op=&gt;operation: 我的操作<br>cond=&gt;condition: 确认？<br><br>st-&gt;op-&gt;cond<br>cond(yes)-&gt;e<br>cond(no)-&gt;op<br></code></pre></td></tr></table></figure>
 
 <p>更多请参考：<a target="_blank" rel="noopener" href="http://bramp.github.io/js-sequence-diagrams/">http://bramp.github.io/js-sequence-diagrams/</a>, <a target="_blank" rel="noopener" href="http://adrai.github.io/flowchart.js/">http://adrai.github.io/flowchart.js/</a></p>
 <h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>Markdown 语法：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">第一格表头 | 第二格表头</span><br><span class="line">--------- | -------------</span><br><span class="line">内容单元格 第一列第一格 | 内容单元格第二列第一格</span><br><span class="line">内容单元格 第一列第二格 多加文字 | 内容单元格第二列第二格</span><br></pre></td></tr></table></figure>
+<figure class="highlight 1c"><table><tr><td class="code"><pre><code class="hljs 1c">第一格表头 <span class="hljs-string">| 第二格表头</span><br>--------- <span class="hljs-string">| -------------</span><br>内容单元格 第一列第一格 <span class="hljs-string">| 内容单元格第二列第一格</span><br>内容单元格 第一列第二格 多加文字 <span class="hljs-string">| 内容单元格第二列第二格</span><br></code></pre></td></tr></table></figure>
 
 <p>效果如下：</p>
 <table>
@@ -162,14 +163,14 @@
 <hr>
 <hr>
 <h2 id="MathJax"><a href="#MathJax" class="headerlink" title="MathJax"></a>MathJax</h2><p>Markdown 语法：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">块级公式：</span><br><span class="line">$$	x = \dfrac&#123;-b \pm \sqrt&#123;b^2 - 4ac&#125;&#125;&#123;2a&#125; $$</span><br><span class="line"></span><br><span class="line">\\[ \frac&#123;1&#125;&#123;\Bigl(\sqrt&#123;\phi \sqrt&#123;5&#125;&#125;-\phi\Bigr) e^&#123;\frac25 \pi&#125;&#125; =</span><br><span class="line">1+\frac&#123;e^&#123;-2\pi&#125;&#125; &#123;1+\frac&#123;e^&#123;-4\pi&#125;&#125; &#123;1+\frac&#123;e^&#123;-6\pi&#125;&#125;</span><br><span class="line">&#123;1+\frac&#123;e^&#123;-8\pi&#125;&#125; &#123;1+\ldots&#125; &#125; &#125; &#125; \\]</span><br><span class="line"></span><br><span class="line">行内公式： $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$</span><br></pre></td></tr></table></figure>
+<figure class="highlight gams"><table><tr><td class="code"><pre><code class="hljs gams">块级公式：<br><span class="hljs-symbol">$</span><span class="hljs-symbol">$</span>	x = \dfrac&#123;-b \pm \<span class="hljs-built_in">sqrt</span>&#123;b^<span class="hljs-number">2</span> - <span class="hljs-number">4</span>ac&#125;&#125;&#123;<span class="hljs-number">2</span>a&#125; <span class="hljs-symbol">$</span><span class="hljs-symbol">$</span><br><br>\\[ \<span class="hljs-built_in">frac</span>&#123;<span class="hljs-number">1</span>&#125;&#123;\Bigl(\<span class="hljs-built_in">sqrt</span>&#123;\phi \<span class="hljs-built_in">sqrt</span>&#123;<span class="hljs-number">5</span>&#125;&#125;-\phi\Bigr) e^&#123;\frac25 \<span class="hljs-built_in">pi</span>&#125;&#125; =<br><span class="hljs-number">1</span>+\<span class="hljs-built_in">frac</span>&#123;e^&#123;<span class="hljs-number">-2</span>\<span class="hljs-built_in">pi</span>&#125;&#125; &#123;<span class="hljs-number">1</span>+\<span class="hljs-built_in">frac</span>&#123;e^&#123;<span class="hljs-number">-4</span>\<span class="hljs-built_in">pi</span>&#125;&#125; &#123;<span class="hljs-number">1</span>+\<span class="hljs-built_in">frac</span>&#123;e^&#123;<span class="hljs-number">-6</span>\<span class="hljs-built_in">pi</span>&#125;&#125;<br>&#123;<span class="hljs-number">1</span>+\<span class="hljs-built_in">frac</span>&#123;e^&#123;<span class="hljs-number">-8</span>\<span class="hljs-built_in">pi</span>&#125;&#125; &#123;<span class="hljs-number">1</span>+\ldots&#125; &#125; &#125; &#125; \\]<br><br>行内公式： <span class="hljs-symbol">$</span>\<span class="hljs-built_in">Gamma</span>(n) = (n<span class="hljs-number">-1</span>)!\quad\forall n\in\mathbb N<span class="hljs-symbol">$</span><br></code></pre></td></tr></table></figure>
 
 <p>效果如下（<code>Preferences</code> - <code>Themes</code> - <code>Enable MathJax</code> 才会看到效果）：</p>
 <p>块级公式：<br>$$	x &#x3D; \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a} $$</p>
 <p>\[ \frac{1}{\Bigl(\sqrt{\phi \sqrt{5}}-\phi\Bigr) e^{\frac25 \pi}} &#x3D;<br>1+\frac{e^{-2\pi}} {1+\frac{e^{-4\pi}} {1+\frac{e^{-6\pi}}<br>{1+\frac{e^{-8\pi}} {1+\ldots} } } } \]</p>
 <p>行内公式： $\Gamma(n) &#x3D; (n-1)!\quad\forall n\in\mathbb N$</p>
 <h2 id="脚注（Footnote）"><a href="#脚注（Footnote）" class="headerlink" title="脚注（Footnote）"></a>脚注（Footnote）</h2><p>Markdown 语法：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">这是一个脚注：[^sample_footnote]</span><br></pre></td></tr></table></figure>
+<figure class="highlight cos"><table><tr><td class="code"><pre><code class="hljs cos">这是一个脚注：[<span class="hljs-symbol">^sample_footnote</span>]<br></code></pre></td></tr></table></figure>
 
 <p>效果如下：</p>
 <p>这是一个脚注：<a href="%E8%BF%99%E9%87%8C%E6%98%AF%E8%84%9A%E6%B3%A8%E4%BF%A1%E6%81%AF">^sample_footnote</a></p>
@@ -177,7 +178,7 @@
 <!-- more -->
 <p>Actions-&gt;Insert Read More Comment <em>或者</em> <code>Command + .</code><br><strong>注</strong> 阅读更多的功能只用在生成网站或博客时。</p>
 <h2 id="TOC"><a href="#TOC" class="headerlink" title="TOC"></a>TOC</h2><p>Markdown 语法：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[TOC]</span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><code class="hljs angelscript"><span class="hljs-string">[TOC]</span><br></code></pre></td></tr></table></figure>
 
 <p>效果如下：</p>
 <p>[TOC]</p>
