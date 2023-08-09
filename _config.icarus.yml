@@ -54,7 +54,7 @@ footer:
       url: https://github.com/hd1987/hd1987.github.io
 article:
   highlight:
-    theme: atom-one-light
+    theme: atom-one-dark
     clipboard: false
     fold: ''
   readtime: false
