@@ -1,6 +1,6 @@
 ---
 title: nvm usage
-date: 2023-04-06 13:32:43
+date: 2024-01-09 13:32:43
 categories:
   - Manual
 tags:
@@ -57,12 +57,13 @@ Usage:
   nvm cache clear                           为 nvm 清空缓存目录
 
 Example:
-  nvm install 8.0.0                     安装特定版本号
-  nvm use 8.0                           使用最新的 8.0.x 版本
-  nvm run 6.10.3 app.js                 使用节点 6.10.3 运行 app.js
-  nvm exec 4.8.3 node app.js            使用指向节点 4.8.3 的路径运行 `node app.js`
-  nvm alias default 8.1.0               在 shell 上设置默认节点版本
-  nvm alias default node                始终默认为 shell 上的最新可用节点版本
+  nvm install 8.0.0                                安装特定版本号
+  nvm use 8.0                                      使用最新的 8.0.x 版本
+  nvm run 6.10.3 app.js                            使用节点 6.10.3 运行 app.js
+  nvm exec 4.8.3 node app.js                       使用指向节点 4.8.3 的路径运行 `node app.js`
+  nvm alias default 8.1.0                          在 shell 上设置默认节点版本
+  nvm alias default node                           始终默认为 shell 上的最新可用节点版本
+  nvm install node --reinstall-packages-from=node  安装最新版本，并从当前版本中重新安装包和全局模块(升级到最新版本并保留已安装的包和全局模块)
 
 Note:
   移除、删除或卸载 nvm - 只需移除 `$NVM_DIR` 文件夹（通常为 `~/.nvm`）
