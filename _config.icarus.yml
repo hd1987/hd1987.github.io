@@ -82,7 +82,7 @@ search:
 #     qrcode: ""
 share:
   type: sharethis
-  install_url: "https://platform-api.sharethis.com/js/sharethis.js#property=638f3ad2a0f4de0012f03df8&product=inline-share-buttons&source=platform"
+  install_url: "https://platform-api.sharethis.com/js/sharethis.js#property=659ce8f62c3e3c0012d51770&product=inline-share-buttons"
 sidebar:
   left:
     sticky: false
