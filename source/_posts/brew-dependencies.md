@@ -4,7 +4,7 @@ date: 2023-04-07 13:32:43
 categories:
   - Manual
 tags:
-  - homebrew
+  - brew
 ---
 
 ```

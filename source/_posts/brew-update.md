@@ -4,7 +4,7 @@ date: 2017-05-24 13:32:43
 categories:
   - Manual
 tags:
-  - homebrew
+  - brew
 toc: true
 ---
 
