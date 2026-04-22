@@ -12,8 +12,6 @@ tags:
 toc: true
 ---
 
-# iTerm2 终端增强指南：安装 Oh My Zsh 和必备插件
-
 iTerm2 是 macOS 上功能强大的终端模拟器，搭配 Oh My Zsh 和实用插件可以大幅提升终端使用体验。本指南将详细介绍如何安装和配置完整的 iTerm2 增强环境。
 
 ## 一、环境准备
@@ -39,6 +37,8 @@ which git
 ```
 
 ---
+
+<!-- more -->
 
 ## 二、安装 iTerm2
 
